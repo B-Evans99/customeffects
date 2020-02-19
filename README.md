@@ -5,5 +5,7 @@ Custom Effects is a GIMP plugin to let users easily run their own effect scripts
 ## Authors
 
 * **Bronwen Evans** - *Initial work* - [B-Evans99](https://github.com/B-Evans99)
+* **Kaitlyn Meyers** - *Initial work* - [kat-meyers](https://github.com/kat-meyers)
+* **Alexandra Bittante** - *Initial work* - [abittante](https://github.com/abittante)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
