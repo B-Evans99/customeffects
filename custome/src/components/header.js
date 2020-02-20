@@ -1,10 +1,10 @@
-import React from 'react';
-
+import React from "react";
+import SearchBar from "./searchbar";
 
 function Header() {
   return (
     <div className="Header">
-      logo search bar register login
+      logo <SearchBar></SearchBar> register login
     </div>
   );
 }
