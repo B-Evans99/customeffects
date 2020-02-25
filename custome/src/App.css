@@ -6,20 +6,56 @@
   text-align: center;
 }
 
+.filterBox{
+  position: absolute;
+  left: 0;
+  display: flex;
+}
+
 .cardBox {
   display: flex;
-  max-width: 800px;
-  margin: auto;
+  position: absolute;
+  right: 0;
+  max-width: 1000px;
   flex-wrap: wrap;
   background: #ddd;
   justify-content: center;
+  padding-bottom: 60px;
 }
 
 .Card {
   height: 200px;
   min-width: 200px;
-  margin: 20px;
-  padding: 20px;
+  padding: 30px 14px;
+}
+
+.cardImg{
+  border-radius: 10px;
+}
+
+.cardAuthorName {
+  color: #464646;
+  padding-bottom: 2px;
+}
+
+.cardEffectName {
+  font-size: 22px;
+}
+
+.cardText {
+  display: flex;
+  align-items: center;
+}
+
+.cardRatingTotal, .cardDownloadText {
+  color: #464646;
+}
+
+.cardDotImg {
+  /*top right bottom left*/
+  /*top right/left bottom*/
+  padding: 4px 6px 0px;
+
 }
 
 .searchBar {
