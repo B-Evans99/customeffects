@@ -19,7 +19,7 @@
   height: 200px;
   min-width: 200px;
   margin: 20px;
-  background: #aaa;
+  padding: 20px;
 }
 
 .searchBar {
