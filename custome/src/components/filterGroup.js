@@ -8,7 +8,7 @@ const FilterGroup = (props) => {
 
     return (
         <div className="FilterGroup" >
-            <span style={{fontSize: "20px"}}>filters:</span>
+            <span className="filterLabel">filters:</span>
             {filters.map(filter => {
                 return <Filter filter={filter}/>;
             })}

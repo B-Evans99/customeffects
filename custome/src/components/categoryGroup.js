@@ -10,7 +10,7 @@ const CategoryGroup = (props) => {
 
     return (
         <div className="CategoryGroup">
-        <span style={{fontSize: "20px"}}>categories:</span>
+        <span className="categoryLabel">categories:</span>
           {categories.map(category => {
             return <Category setNavigation = {setNavigation} category={category}/>;
            })}
