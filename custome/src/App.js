@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-import Card from "./components/card.js";
-import FilterGroup from "./components/filterGroup.js";
 import Header from "./components/header.js";
-import CategoryGroup from "./components/categoryGroup.js";
-import logo from "./logo.svg";
+import HomePage from "./HomePage.js";
 import "./App.css";
 
 function App() {
@@ -13,18 +10,8 @@ function App() {
 
   return (
     <div className="App" style={{display:"flex", flexDirection: "column"}}>
-      <Header/>
-      <div style={{display: "flex", flexDirection:"row"}}>
-      <div className="filterBox" >
-          <FilterGroup filters = {filters}/>
-          <CategoryGroup categories = {categories} />
-      </div>
-      <div className="cardBox">
-        {effects.map(effect => {
-          return <Card/>;
-        })}
-      </div>
-      </div>
+      {/* <Header/> */}
+      <HomePage effects = {effects} filters = {filters} categories = {categories}/>
     </div>
   );
 }
