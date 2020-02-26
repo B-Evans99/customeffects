@@ -5,9 +5,19 @@ import dot from "../images/dot.png";
 import "../App.css";
 import users from "../data/users.js";
 
-const Card = ({ effect }) => {
+const Card = props => {
+  let effectName = props.effect;
+  let setNavigation = props.setNavigation;
+  let setResultsType = props.setResultsType;
+  let effect = props.effect;
+
+  const cardClick = () => {
+    setResultsType(prevstate => (prevstate = [3, effectName]));
+    setNavigation(prevstate => (prevstate = 2));
+  };
+
   return (
-    <div className="Card">
+    <div className="Card" onClick={cardClick}>
       <div className="cardAuthorName">by {users.users[effect.user].name}</div>
       <img src={blur} className="cardImg" alt="blur" />
       <div className="cardEffectName">{effect.name}</div>

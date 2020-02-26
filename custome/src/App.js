@@ -33,6 +33,7 @@ function App() {
 
   let [users, setUsers] = useState(data.users);
   let [effects, setEffects] = useState(data.effects);
+  let [searchString, setSearchString] = useState("");
   let [filters, setFilters] = useState([
     "highest rating",
     "newest",
@@ -47,13 +48,25 @@ function App() {
     "miscellaneous"
   ]);
 
+  // 1 = category, 2 = search, 3 = description/recommendations
+  let [resultsType, setResultsType] = useState([1, "blur"]);
+
   return (
     <div className="App">
-      <Header setNavigation={setNavigation} navigation={navigation} />
+      <Header
+        searchString={searchString}
+        setSearchString={setSearchString}
+        setResultsType={setResultsType}
+        setNavigation={setNavigation}
+        navigation={navigation}
+        setNavigation={setNavigation}
+        navigation={navigation}
+      />
       {navigation == 1 ? (
         <HomePage
-          setNavigation={setNavigation}
+          setResultsType={setResultsType}
           effects={effects}
+          setNavigation={setNavigation}
           sortByDownloads={sortByDownloads}
           sortByRating={sortByRating}
           sortByNewest={sortByNewest}
@@ -62,7 +75,7 @@ function App() {
           setEffects={setEffects}
         />
       ) : navigation == 2 ? (
-        <ResultsPage setNavigation={setNavigation} />
+        <ResultsPage setNavigation={setNavigation} resultsType={resultsType} />
       ) : (
         <ProfilePage setNavigation={setNavigation} />
       )}

@@ -8,10 +8,15 @@ const ResultsPage = (props) => {
     let effects = props.effects;
 
     let setNavigation = props.setNavigation;
+
+    let resultsType = props.resultsType;
     
     return (
         <div className = "ResultsPage">
-            Results Page
+            {resultsType[0] == 1? resultsType[1] + " category":
+            resultsType[0] == 2? "search results for \"" + resultsType[1] + "\"":
+            "effects similar to " + resultsType[1]}
+            
         </div>
     );
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import "../App.css";
+import ResultsPage from '../ResultsPage';
 
 
 
@@ -9,9 +10,12 @@ const Category = (props) => {
 
     let setNavigation = props.setNavigation;
 
+    let setResultsType = props.setResultsType;
+
     const categoryClick = () =>{
         console.log(category);
-        setNavigation(2);
+        setResultsType(prevstate => prevstate = [1, category]);
+        setNavigation(prevstate => prevstate = 2);
     }
 
     return (

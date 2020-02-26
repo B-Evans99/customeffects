@@ -11,9 +11,12 @@ const HomePage = props => {
 
   let setNavigation = props.setNavigation;
 
+  let setResultsType = props.setResultsType;
+
   return (
     <div className="HomePage">
       <FilterBox
+        setResultsType={setResultsType}
         sortByDownloads={props.sortByDownloads}
         sortByRating={props.sortByRating}
         sortByNewest={props.sortByNewest}
@@ -22,7 +25,11 @@ const HomePage = props => {
         filters={filters}
         setEffects={props.setEffects}
       />
-      <CardBox setNavigation={setNavigation} effects={effects} />
+      <CardBox
+        setResultsType={setResultsType}
+        setNavigation={setNavigation}
+        effects={effects}
+      />
     </div>
   );
 };

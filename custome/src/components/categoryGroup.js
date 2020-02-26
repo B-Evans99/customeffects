@@ -8,11 +8,13 @@ const CategoryGroup = (props) => {
 
     let setNavigation = props.setNavigation;
 
+    let setResultsType = props.setResultsType;
+
     return (
         <div className="CategoryGroup">
-        <span style={{fontSize: "20px"}}>categories:</span>
+        <span className="categoryLabel">categories:</span>
           {categories.map(category => {
-            return <Category setNavigation = {setNavigation} category={category}/>;
+            return <Category setResultsType = {setResultsType} setNavigation = {setNavigation} category={category}/>;
            })}
         </div>
     );
