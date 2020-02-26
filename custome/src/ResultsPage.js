@@ -1,7 +1,7 @@
 import React from 'react';
 import "./App.css";
 
-const CategoryResultsPage = (props) => {
+const ResultsPage = (props) => {
 
     let filters = props.filters;
     let categories = props.categories;
@@ -10,10 +10,10 @@ const CategoryResultsPage = (props) => {
     let setNavigation = props.setNavigation;
     
     return (
-        <div className = "CategoryResultsPage">
-            Category Results Page
+        <div className = "ResultsPage">
+            Results Page
         </div>
     );
 }
 
-export default CategoryResultsPage;
+export default ResultsPage;
