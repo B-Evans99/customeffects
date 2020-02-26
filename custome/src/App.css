@@ -99,11 +99,11 @@
 .cardBox {
   display: flex;
   flex: 1;
-  height: 1000px;
+  min-height: 1000px;
   flex-wrap: wrap;
   background: #ddd;
   justify-content: center;
-  padding-bottom: 60px;
+  padding-bottom: 40px;
 }
 
 .Card {
