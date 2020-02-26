@@ -1,3 +1,10 @@
+.Filter {
+  cursor: default;
+}
+.Logo, .registerButton, .loginButton, .profileIcon, .Category, .checkbox {
+  cursor: pointer;
+}
+
 .Header {
   background: rgb(55, 136, 129);
   color: #fff;
@@ -62,6 +69,10 @@
 .Filter, .Category{
   padding-left: 30px;
   margin: 20px 0px;
+}
+
+.checkbox {
+  margin-left: 5px;
 }
 
 .FilterGroup, .CategoryGroup{

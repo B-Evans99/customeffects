@@ -9,7 +9,7 @@ const Filter = (props) => {
     <div className="Filter" >
         <span>
             {filter}
-            <input type="checkbox" style={{marginLeft: "5px",}}/>
+            <input type="checkbox" className = "checkbox" />
         </span>
     </div>
   );
