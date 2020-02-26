@@ -119,7 +119,7 @@ a:hover {
 .cardBox {
   display: flex;
   flex: 1;
-  min-height: 1000px;
+  min-height: min-content;
   flex-wrap: wrap;
   background: #ddd;
   justify-content: center;
