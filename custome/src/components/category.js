@@ -2,12 +2,20 @@ import React from 'react';
 import "../App.css";
 
 
-const Category = () => {
-  return (
-    <div className="Category" >
-     Category
-    </div>
-  );
+
+const Category = (props) => {
+
+    let category = props.category;
+
+    const categoryClick = () =>{
+        console.log(category);
+    }
+
+    return (
+        <div className="Category" onClick={categoryClick}>
+        {category}
+        </div>
+    );
 }
 
 export default Category;

@@ -10,7 +10,7 @@ let downloadTotal = 299;
 let authorName = "author";
 let effectName = "blur effect";
 
-function Card() {
+const Card = () => {
   return (
     <div className="Card" >
       <div className="cardAuthorName">by {authorName}</div>

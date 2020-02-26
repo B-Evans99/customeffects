@@ -1,11 +1,16 @@
 import React from 'react';
 import "../App.css";
 
+const Filter = (props) => {
 
-const Filter = () => {
+    let filter = props.filter;
+
   return (
     <div className="Filter" >
-     Filter
+        <span>
+            {filter}
+            <input type="checkbox" className = "checkbox" />
+        </span>
     </div>
   );
 }
