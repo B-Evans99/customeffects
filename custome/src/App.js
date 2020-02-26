@@ -13,14 +13,18 @@ function App() {
   let [effects, setEffects] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
   let [filters, setFilters] = useState(["highest rating", "newest", "most downloads"]);
   let [categories, setCategories] = useState(["blur", "colorization", "vintage", "rotational/skewing", "sharpening", "miscellaneous"]);
+  let [searchString, setSearchString] = useState("");
+
+  // 1 = category, 2 = search, 3 = description/recommendations
+  let [resultsType, setResultsType] = useState([1, "blur"]);
 
   return(
     <div className="App" >
-      <Header setNavigation = {setNavigation} navigation = {navigation} />
+      <Header searchString = {searchString} setSearchString = {setSearchString} setResultsType = {setResultsType} setNavigation = {setNavigation} navigation = {navigation} />
       {navigation == 1? 
-      <HomePage setNavigation = {setNavigation} effects = {effects} filters = {filters} categories = {categories}/>: 
+      <HomePage setResultsType = {setResultsType} setNavigation = {setNavigation} effects = {effects} filters = {filters} categories = {categories}/>: 
       navigation == 2?
-      <ResultsPage setNavigation = {setNavigation}/>:
+      <ResultsPage resultsType = {resultsType} setNavigation = {setNavigation}/>:
       <ProfilePage setNavigation = {setNavigation} />}
     </div>
   )

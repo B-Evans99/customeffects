@@ -7,6 +7,9 @@ const Header = (props) =>{
 
   let navigation = props.navigation;
   let setNavigation = props.setNavigation;
+  let setSearchString = props.setSearchString;
+  let setResultsType = props.setResultsType;
+  let searchString = props.searchString;
 
   const logoClick = () =>{
     console.log("Logo Click");
@@ -30,7 +33,7 @@ const Header = (props) =>{
       <div className = "Logo" onClick={logoClick}>
         logo 
       </div>
-      <SearchBar /> 
+      <SearchBar searchString = {searchString} setResultsType = {setResultsType} setSearchString = {setSearchString} setNavigation = {setNavigation}/> 
       <div className = "accountButtons">
         <img src = {profile} alt="profile" onClick = {profileClick} className = "profileIcon" />
         <div className = "registerButton" onClick= {registerClick}>
