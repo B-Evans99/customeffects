@@ -31,6 +31,37 @@ export default {
       reviewers: 3,
       downloads: 7,
       date: 1564790400
+    },
+    {
+      eID: 3,
+      user: 1,
+      name: "pop art",
+      desc: "Brighten up your family photos!",
+      rating: 3.1,
+      reviewers: 55,
+      downloads: 532,
+      date: 1566790400
+    },
+    {
+      eID: 4,
+      user: 0,
+      name: "mirror",
+      desc:
+        "Save yourself twice the hassle and repeat what you did. Kaleidoscope features included.",
+      rating: 4.9,
+      reviewers: 2,
+      downloads: 3,
+      date: 1566990400
+    },
+    {
+      eID: 5,
+      user: 3,
+      name: "underwater ripple",
+      desc: "From beneath the ocean waves!",
+      rating: 1.3,
+      reviewers: 6,
+      downloads: 49,
+      date: 1562930400
     }
   ],
   users: {
