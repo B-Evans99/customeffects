@@ -18,7 +18,16 @@ export default {
         "Who doesn't love a good polka dot fiasco? A perusal of the polka dot pantry?",
       rating: 4.8,
       reviewers: 42,
-      downloads: 2
+      downloads: 142
+    },
+    {
+      eID: 2,
+      user: 2,
+      name: "blender",
+      desc: "I made this so that you can really make your colours blend.",
+      rating: 1.2,
+      reviewers: 3,
+      downloads: 7
     }
   ],
   users: {
