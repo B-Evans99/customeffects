@@ -20,6 +20,13 @@ let sortByRating = effects => {
   return effects;
 };
 
+let sortByNewest = effects => {
+  effects.sort((a, b) => {
+    return a.date <= b.date;
+  });
+  return effects;
+};
+
 function App() {
   // 1 = initial page, 2 = results page, 3 = profile page
   let [navigation, setNavigation] = useState(1);
@@ -39,7 +46,6 @@ function App() {
     "sharpening",
     "miscellaneous"
   ]);
-  let [results, setResults] = useState(sortByRating(effects));
 
   return (
     <div className="App">
@@ -47,9 +53,13 @@ function App() {
       {navigation == 1 ? (
         <HomePage
           setNavigation={setNavigation}
-          effects={results}
+          effects={effects}
+          sortByDownloads={sortByDownloads}
+          sortByRating={sortByRating}
+          sortByNewest={sortByNewest}
           filters={filters}
           categories={categories}
+          setEffects={setEffects}
         />
       ) : navigation == 2 ? (
         <ResultsPage setNavigation={setNavigation} />

@@ -27,6 +27,10 @@ const Card = ({ effect }) => {
         <span className="cardDownloadLine">
           {effect.downloads} <span className="cardDownloadText">downloads</span>
         </span>
+        <img src={dot} className="cardDotImg" alt="." width={5} />
+        <span className="date">
+          {new Date(effect.date * 1000).getFullYear()}
+        </span>
       </div>
     </div>
   );
