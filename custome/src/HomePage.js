@@ -11,10 +11,12 @@ const HomePage = (props) => {
     let effects = props.effects;
 
     let setNavigation = props.setNavigation;
+
+    let setResultsType = props.setResultsType;
     
     return (
         <div className = "HomePage">
-            <FilterBox setNavigation = {setNavigation} categories = {categories} filters = {filters}/>
+            <FilterBox setResultsType = {setResultsType} setNavigation = {setNavigation} categories = {categories} filters = {filters}/>
             <CardBox setNavigation = {setNavigation} effects = {effects} />
         </div>
     );
