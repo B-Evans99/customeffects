@@ -6,6 +6,20 @@ import ProfilePage from "./ProfilePage.js";
 import "./App.css";
 import data from "./data/users.js";
 
+let sortByDownloads = effects => {
+  effects.sort((a, b) => {
+    return a.downloads <= b.downloads;
+  });
+  return effects;
+};
+
+let sortByRating = effects => {
+  effects.sort((a, b) => {
+    return a.rating <= b.rating;
+  });
+  return effects;
+};
+
 function App() {
   // 1 = initial page, 2 = results page, 3 = profile page
   let [navigation, setNavigation] = useState(1);
@@ -25,6 +39,7 @@ function App() {
     "sharpening",
     "miscellaneous"
   ]);
+  let [results, setResults] = useState(sortByRating(effects));
 
   return (
     <div className="App">
@@ -32,7 +47,7 @@ function App() {
       {navigation == 1 ? (
         <HomePage
           setNavigation={setNavigation}
-          effects={effects}
+          effects={results}
           filters={filters}
           categories={categories}
         />

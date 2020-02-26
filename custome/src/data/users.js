@@ -18,7 +18,7 @@ export default {
         "Who doesn't love a good polka dot fiasco? A perusal of the polka dot pantry?",
       rating: 4.8,
       reviewers: 42,
-      downloads: 138
+      downloads: 2
     }
   ],
   users: {
