@@ -3,10 +3,14 @@ import "../App.css";
 import profile from "../images/profile.png";
 import SearchBar from "./searchbar";
 
-const Header = () =>{
+const Header = (props) =>{
+
+  let navigation = props.navigation;
+  let setNavigation = props.setNavigation;
 
   const logoClick = () =>{
     console.log("Logo Click");
+    setNavigation(1);
   }
 
   const registerClick = () => {
