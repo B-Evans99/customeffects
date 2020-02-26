@@ -6,7 +6,7 @@ import "../App.css";
 import users from "../data/users.js";
 
 const Card = props => {
-  let effectName = props.effect;
+  let effectName = props.effect.name;
   let setNavigation = props.setNavigation;
   let setResultsType = props.setResultsType;
   let effect = props.effect;
@@ -18,7 +18,12 @@ const Card = props => {
 
   return (
     <div className="Card" onClick={cardClick}>
-      <div className="cardAuthorName">by {users.users[effect.user].name}</div>
+      <div className="cardAuthorName">by {users.users[effect.user].name}
+      <img style={{paddingBottom: "2px"}} src={dot} className="cardDotImg" alt="." width={3} />
+      <span className="date">
+          {new Date(effect.date * 1000).getFullYear()}
+        </span>
+      </div>
       <img src={blur} className="cardImg" alt="blur" />
       <div className="cardEffectName">{effect.name}</div>
       <div className="cardText">
@@ -36,10 +41,6 @@ const Card = props => {
         <img src={dot} className="cardDotImg" alt="." width={5} />
         <span className="cardDownloadLine">
           {effect.downloads} <span className="cardDownloadText">downloads</span>
-        </span>
-        <img src={dot} className="cardDotImg" alt="." width={5} />
-        <span className="date">
-          {new Date(effect.date * 1000).getFullYear()}
         </span>
       </div>
     </div>

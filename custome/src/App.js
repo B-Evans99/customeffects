@@ -35,9 +35,9 @@ function App() {
   let [effects, setEffects] = useState(data.effects);
   let [searchString, setSearchString] = useState("");
   let [filters, setFilters] = useState([
-    "highest rating",
-    "newest",
-    "most downloads"
+    "rating",
+    "downloads",
+    "newest"
   ]);
   let [categories, setCategories] = useState([
     "blur",
