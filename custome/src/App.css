@@ -9,6 +9,18 @@
 .filterBox{
   float: left;
   display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.Filter, .Category{
+  padding-left: 30px;
+  margin: 20px 0px;
+}
+
+.FilterGroup, .CategoryGroup{
+  margin-left: 30px;
+  margin-top: 20px;
 }
 
 .cardBox {
