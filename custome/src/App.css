@@ -17,6 +17,11 @@
   cursor: pointer;
 }
 
+.App {
+  display:flex;
+  flex-direction: column;
+}
+
 .Header {
   background: var(--main-bg-color);
   color: #fff;

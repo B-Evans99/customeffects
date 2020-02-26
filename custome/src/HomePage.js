@@ -9,11 +9,13 @@ const HomePage = (props) => {
     let filters = props.filters;
     let categories = props.categories;
     let effects = props.effects;
+
+    let setNavigation = props.setNavigation;
     
     return (
         <div className = "HomePage">
-            <FilterBox categories = {categories} filters = {filters}/>
-            <CardBox effects = {effects} />
+            <FilterBox setNavigation = {setNavigation} categories = {categories} filters = {filters}/>
+            <CardBox setNavigation = {setNavigation} effects = {effects} />
         </div>
     );
 }
