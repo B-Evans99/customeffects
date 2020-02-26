@@ -12,11 +12,8 @@ const HomePage = (props) => {
     
     return (
         <div className = "HomePage">
-            <Header/>
-            <div style={{display: "flex", flexDirection:"row"}}>
-                <FilterBox categories = {categories} filters = {filters}/>
-                <CardBox effects = {effects} />
-            </div>
+            <FilterBox categories = {categories} filters = {filters}/>
+            <CardBox effects = {effects} />
         </div>
     );
 }

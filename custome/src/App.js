@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className="App" style={{display:"flex", flexDirection: "column"}}>
-      {/* <Header/> */}
+      <Header/>
       <HomePage effects = {effects} filters = {filters} categories = {categories}/>
     </div>
   );

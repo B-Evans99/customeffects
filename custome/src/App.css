@@ -44,6 +44,14 @@
   color: rgb(55, 136, 129);
 }
 
+.HomePage{
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+
 .filterBox{
   float: left;
   display: flex;
