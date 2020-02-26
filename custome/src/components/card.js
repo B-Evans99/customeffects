@@ -6,7 +6,7 @@ import "../App.css";
 import users from "../data/users.js";
 
 const Card = props => {
-  let effectName = props.effect;
+  let effectName = props.effect.name;
   let setNavigation = props.setNavigation;
   let setResultsType = props.setResultsType;
   let effect = props.effect;
