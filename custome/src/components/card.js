@@ -3,17 +3,12 @@ import blur from "../images/blur.png";
 import star from "../images/star.png";
 import dot from "../images/dot.png";
 import "../App.css";
-
-let ratingAverage = 4.8;
-let ratingTotal = 112;
-let downloadTotal = 299;
-let authorName = "author";
-let effectName = "blur effect";
+import users from "../data/users.js";
 
 const Card = ({ effect }) => {
   return (
     <div className="Card">
-      <div className="cardAuthorName">by {effect.user}</div>
+      <div className="cardAuthorName">by {users.users[effect.user].name}</div>
       <img src={blur} className="cardImg" alt="blur" />
       <div className="cardEffectName">{effect.name}</div>
       <div className="cardText">

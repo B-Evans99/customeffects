@@ -21,30 +21,26 @@ export default {
       downloads: 138
     }
   ],
-  users: [
-    {
-      uID: 0,
+  users: {
+    0: {
       name: "greg",
       password: "password",
       github: "gregHub"
     },
-    {
-      uID: 1,
+    1: {
       name: "tyson",
       password: "password",
       github: "tdawgscreations"
     },
-    {
-      uID: 2,
+    2: {
       name: "xX_t0rtureds0ul_Xx",
       password: "password",
       github: "stringy"
     },
-    {
-      uID: 3,
+    3: {
       name: "tweedy",
       password: "password",
       github: "tweedy"
     }
-  ]
+  }
 };
