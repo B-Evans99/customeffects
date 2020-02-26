@@ -9,10 +9,8 @@ const SearchBar = (props) => {
 
  
   const handleSubmit = () => {
-  
       setResultsType(prevstate => prevstate = [2, searchString]);
       setNavigation(prevstate => prevstate = 2);
-
   }
 
 

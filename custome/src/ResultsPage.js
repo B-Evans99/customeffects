@@ -15,7 +15,7 @@ const ResultsPage = (props) => {
         <div className = "ResultsPage">
             {resultsType[0] == 1? resultsType[1] + " category":
             resultsType[0] == 2? "search results for \"" + resultsType[1] + "\"":
-            "similar results"}
+            "effects similar to " + resultsType[1]}
             
         </div>
     );
