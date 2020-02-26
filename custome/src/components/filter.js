@@ -21,7 +21,8 @@ const Filter = props => {
   return (
     <div className="Filter">
       {filter}
-      <input 
+      <input
+        className = "checkbox"
         type="checkbox"
         checked= {filter == checked? true: false}
         onClick = {checkClick}
