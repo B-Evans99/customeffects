@@ -17,7 +17,7 @@ const HomePage = (props) => {
     return (
         <div className = "HomePage">
             <FilterBox setResultsType = {setResultsType} setNavigation = {setNavigation} categories = {categories} filters = {filters}/>
-            <CardBox setNavigation = {setNavigation} effects = {effects} />
+            <CardBox setResultsType = {setResultsType} setNavigation = {setNavigation} effects = {effects} />
         </div>
     );
 }

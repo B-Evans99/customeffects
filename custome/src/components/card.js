@@ -8,11 +8,20 @@ let ratingAverage = 4.8;
 let ratingTotal = 112;
 let downloadTotal = 299;
 let authorName = "author";
-let effectName = "blur effect";
 
-const Card = () => {
+const Card = (props) => {
+
+  let effectName = props.effect;
+  let setNavigation = props.setNavigation;
+  let setResultsType = props.setResultsType;
+
+  const cardClick = () => {
+    setResultsType(prevstate => prevstate = [3, effectName]);
+    setNavigation(prevstate => prevstate = 2);
+  }
+
   return (
-    <div className="Card" >
+    <div className="Card" onClick={cardClick}>
       <div className="cardAuthorName">by {authorName}</div>
       <img src= {blur} className="cardImg" alt="blur" />
       <div className="cardEffectName">{effectName}</div>
