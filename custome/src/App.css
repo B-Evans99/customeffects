@@ -1,7 +1,19 @@
+:root {
+  --main-bg-color: rgb(55, 136, 129);
+  --secondary-bg-color: #f5f5f5;
+  --white: #fff;
+  --highligh: #444;
+}
+
 .Filter {
   cursor: default;
 }
-.Logo, .registerButton, .loginButton, .profileIcon, .Category, .checkbox {
+.Logo,
+.registerButton,
+.loginButton,
+.profileIcon,
+.Category,
+.checkbox {
   cursor: pointer;
 }
 
@@ -11,30 +23,33 @@
 }
 
 .Header {
-  background: rgb(55, 136, 129);
+  background: var(--main-bg-color);
   color: #fff;
   font-size: 1.2em;
   padding: 12px 0px;
   text-align: center;
   display: flex;
   flex-direction: row;
+  position: sticky;
+  top: 0px;
+  z-index: 3;
 }
 
-.Logo{
+.Logo {
   margin-right: auto;
   margin-left: 20px;
 }
 
 .searchBar {
-  background: #f5f5f5;
+  background: var(--secondary-bg-color);
   padding: 7px 16px;
   min-width: 30%;
   border-radius: 40px;
-  margin-left:auto;
+  margin-left: auto;
   margin-right: 30px;
 }
 
-.accountButtons{
+.accountButtons {
   display: flex;
   flex-direction: row;
 }
@@ -45,57 +60,50 @@
   margin-right: 15px;
 }
 
-.registerButton, .loginButton {
+.registerButton,
+.loginButton {
   padding: 4px 15px 0px;
   font-size: 16px;
 }
 
 .registerButton {
-  background-color: white;
+  background-color: var(--white);
   border-radius: 5px;
-  color: rgb(55, 136, 129);
+  color: var(--main-bg-color);
 }
 
-.HomePage{
+.HomePage {
   display: flex;
   flex-direction: row;
 }
 
-
-
-
-.filterBox{
-  float: left;
-  display: flex;
-  flex-direction: column;
-  margin-top: 20px;
+.filterBox {
+  position: relative;
+  padding: 20px 50px;
 }
 
-.Filter, .Category{
-  padding-left: 30px;
-  margin: 20px 0px;
+.Filter,
+.Category {
+  padding: 7px 17px;
 }
 
 .checkbox {
   margin-left: 5px;
 }
 
-.FilterGroup, .CategoryGroup{
-  margin-left: 30px;
-  margin-top: 20px;
+.FilterGroup,
+.CategoryGroup {
+  padding-bottom: 40px;
 }
 
 .cardBox {
   display: flex;
-  position:absolute;
-  right:0;
-  max-width: 1000px;
+  flex: 1;
   height: 1000px;
   flex-wrap: wrap;
   background: #ddd;
   justify-content: center;
   padding-bottom: 60px;
-  overflow:scroll;
 }
 
 .Card {
@@ -104,7 +112,7 @@
   padding: 30px 14px;
 }
 
-.cardImg{
+.cardImg {
   border-radius: 10px;
 }
 
@@ -122,7 +130,8 @@
   align-items: center;
 }
 
-.cardRatingTotal, .cardDownloadText {
+.cardRatingTotal,
+.cardDownloadText {
   color: #464646;
 }
 
@@ -130,6 +139,4 @@
   /*top right bottom left*/
   /*top right/left bottom*/
   padding: 4px 6px 0px;
-
 }
-
