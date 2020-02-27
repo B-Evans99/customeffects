@@ -9,15 +9,22 @@ const ResultCard = props => {
   let effectName = props.effect.name;
   let setNavigation = props.setNavigation;
   let setResultsType = props.setResultsType;
+
+  let focusedEffect = props.focusedEffect;
+  let setFocusedEffect = props.setFocusedEffect;
+
   let effect = props.effect;
 
-  const cardClick = () => {
-    setResultsType(prevstate => (prevstate = [3, effectName]));
-    setNavigation(prevstate => (prevstate = 2));
+  let focusStyle = {
+    boxShadow: "0px 3px 6px #464646"
   };
 
+  const resultClick = () => {
+    setFocusedEffect(prevstate => prevstate = effect);
+  }
+
   return (
-    <div className="resultCard" >
+    <div className="resultCard" onClick={resultClick} style={focusedEffect == effect? focusStyle: {}}>
         <img src={resultImg} className="resultCardImg" alt="blur" height={90} />
         <div className="resultCardText">
             <span className="cardEffectName">{effect.name}</span>
