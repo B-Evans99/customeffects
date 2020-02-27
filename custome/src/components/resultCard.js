@@ -17,7 +17,7 @@ const ResultCard = props => {
   };
 
   return (
-    <div className="resultCard" onClick={cardClick}>
+    <div className="resultCard" >
         <img src={resultImg} className="resultCardImg" alt="blur" height={90} />
         <div className="resultCardText">
             <span className="cardEffectName">{effect.name}</span>

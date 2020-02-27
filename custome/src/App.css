@@ -163,9 +163,13 @@ a:hover {
   padding: 4px 6px 0px;
 }
 
+.ResultsPage{
+  display:flex;
+  flex-direction: row;
+}
+
 .resultBox{
   background-color: #eee;
-  width: 50%;
   padding: 20px 0px;
   border-radius: 10px;
 }
@@ -195,4 +199,8 @@ a:hover {
   display:flex;
   align-items: center;
   margin-top: 10px;
+}
+
+.descriptionBox {
+  margin: 10px auto;
 }
