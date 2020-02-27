@@ -79,7 +79,7 @@ function App() {
           setEffects={setEffects}
         />
       ) : navigation == 2 ? (
-        <ResultsPage setNavigation={setNavigation} resultsType={resultsType} />
+        <ResultsPage effects={effects} setNavigation={setNavigation} resultsType={resultsType} />
       ) : (
         <ProfilePage setNavigation={setNavigation} />
       )}

@@ -162,3 +162,37 @@ a:hover {
   /*top right/left bottom*/
   padding: 4px 6px 0px;
 }
+
+.resultBox{
+  background-color: #eee;
+  width: 50%;
+  padding: 20px 0px;
+  border-radius: 10px;
+}
+
+.resultCard{
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.resultCardImg {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.resultCardText{
+  padding-left:10px;
+}
+
+.resultDotImg {
+  padding: 4px 6px 0px;
+}
+
+.resultRateDownloadText{
+  display:flex;
+  align-items: center;
+  margin-top: 10px;
+}
