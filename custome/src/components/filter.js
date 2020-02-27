@@ -11,10 +11,10 @@ const Filter = props => {
       setChecked(filter);
    }
     console.log(props.modify);
-          console.log(props.setEffects);
-          props.setEffects(effects => {
-            return JSON.parse(JSON.stringify(props.modify(effects)));
-          });
+    console.log(props.setEffects);
+    props.setEffects(effects => {
+      return JSON.parse(JSON.stringify(props.modify(effects)));
+    });
   }
 
 
