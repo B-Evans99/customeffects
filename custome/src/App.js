@@ -7,6 +7,7 @@ import "./App.css";
 import data from "./data/users.js";
 
 let sortByDownloads = effects => {
+  console.log("SORTING BY DOWNLAODS");
   effects.sort((a, b) => {
     return a.downloads <= b.downloads;
   });
@@ -14,6 +15,7 @@ let sortByDownloads = effects => {
 };
 
 let sortByRating = effects => {
+  console.log("SORTING BY RATING");
   effects.sort((a, b) => {
     return a.rating <= b.rating;
   });
@@ -21,6 +23,7 @@ let sortByRating = effects => {
 };
 
 let sortByNewest = effects => {
+  console.log("SORTING BY NEWEST");
   effects.sort((a, b) => {
     return a.date <= b.date;
   });
@@ -35,9 +38,9 @@ function App() {
   let [effects, setEffects] = useState(data.effects);
   let [searchString, setSearchString] = useState("");
   let [filters, setFilters] = useState([
-    "rating",
-    "downloads",
-    "newest"
+    "highest rating",
+    "newest",
+    "most downloads"
   ]);
   let [categories, setCategories] = useState([
     "blur",
