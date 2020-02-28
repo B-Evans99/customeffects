@@ -18,7 +18,14 @@ const Filter = props => {
   };
 
   return (
-    <div className="Filter">
+    <div
+      className="Filter"
+      onClick={() => {
+        if (filter != checked) {
+          checkClick();
+        }
+      }}
+    >
       {filter}
       <input
         className="checkbox"
