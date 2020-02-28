@@ -64,28 +64,21 @@ function App() {
   ]);
 
   useEffect(()=>{
-    search(searchString,effects,users);
+    search(searchString,effects,users,categories);
   },[searchString])
 
   // 1 = category, 2 = search, 3 = description/recommendations
-  let [resultsType, setResultsType] = useState([1, "blur"]);
+  let [results, setResults] = useState({effects:[],users:[],categories:[]});
 
   return (
     <Router>
       <div className="App">
         <Header
-          searchString={searchString}
           setSearchString={setSearchString}
-          setResultsType={setResultsType}
-          setNavigation={setNavigation}
-          navigation={navigation}
-          setNavigation={setNavigation}
-          navigation={navigation}
         />
         <Switch>
           <Route exact path="/">
             <HomePage
-              setResultsType={setResultsType}
               effects={effects}
               setNavigation={setNavigation}
               sortByDownloads={sortByDownloads}
@@ -99,8 +92,7 @@ function App() {
           <Route path="/results">
             <ResultsPage
               effects={effects}
-              setNavigation={setNavigation}
-              resultsType={resultsType}
+              results={results}
             />
           </Route>
           <Route path="/profile">

@@ -11,7 +11,7 @@ const ResultsPage = (props) => {
 
     let setNavigation = props.setNavigation;
 
-    let resultsType = props.resultsType;
+    let results = props.results;
 
     let effect = effects[0];
 
@@ -25,7 +25,7 @@ const ResultsPage = (props) => {
     
     return (
         <div className = "ResultsPage">
-            <ResultBox resultsType={resultsType} effects={effects} focusedEffect = {focusedEffect} setFocusedEffect={setFocusedEffect} />
+            <ResultBox results={results} effects={effects} focusedEffect = {focusedEffect} setFocusedEffect={setFocusedEffect} />
             <DescriptionBox effects={effects} focusedEffect = {focusedEffect}/>
         </div>
     );
