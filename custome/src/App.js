@@ -5,6 +5,7 @@ import ResultsPage from "./ResultsPage.js";
 import ProfilePage from "./ProfilePage.js";
 import "./App.css";
 import data from "./data/users.js";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 let sortByDownloads = effects => {
   console.log("SORTING BY DOWNLOADS");
@@ -59,38 +60,44 @@ function App() {
   let [resultsType, setResultsType] = useState([1, "blur"]);
 
   return (
-    <div className="App">
-      <Header
-        searchString={searchString}
-        setSearchString={setSearchString}
-        setResultsType={setResultsType}
-        setNavigation={setNavigation}
-        navigation={navigation}
-        setNavigation={setNavigation}
-        navigation={navigation}
-      />
-      {navigation == 1 ? (
-        <HomePage
+    <Router>
+      <div className="App">
+        <Header
+          searchString={searchString}
+          setSearchString={setSearchString}
           setResultsType={setResultsType}
-          effects={effects}
           setNavigation={setNavigation}
-          sortByDownloads={sortByDownloads}
-          sortByRating={sortByRating}
-          sortByNewest={sortByNewest}
-          filters={filters}
-          categories={categories}
-          setEffects={setEffects}
-        />
-      ) : navigation == 2 ? (
-        <ResultsPage
-          effects={effects}
+          navigation={navigation}
           setNavigation={setNavigation}
-          resultsType={resultsType}
+          navigation={navigation}
         />
-      ) : (
-        <ProfilePage setNavigation={setNavigation} />
-      )}
-    </div>
+        <Switch>
+          <Route exact path="/">
+            <HomePage
+              setResultsType={setResultsType}
+              effects={effects}
+              setNavigation={setNavigation}
+              sortByDownloads={sortByDownloads}
+              sortByRating={sortByRating}
+              sortByNewest={sortByNewest}
+              filters={filters}
+              categories={categories}
+              setEffects={setEffects}
+            />
+          </Route>
+          <Route path="/results">
+            <ResultsPage
+              effects={effects}
+              setNavigation={setNavigation}
+              resultsType={resultsType}
+            />
+          </Route>
+          <Route path="/profile">
+            <ProfilePage setNavigation={setNavigation} />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

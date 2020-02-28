@@ -1,5 +1,7 @@
 :root {
-  --main-bg-color: rgb(55, 136, 129);
+  --main-bg-color: rgb(155, 185, 219);
+  --bluehighlight: rgb(129, 156, 7);
+  --bluehighlight2: rgb(240, 226, 196);
   --secondary-bg-color: #f5f5f5;
   --white: #fff;
   --highlight: rgb(182, 9, 81);
@@ -13,6 +15,10 @@ a {
 
 a:hover {
   color: var(--secondary-highlight);
+}
+
+.Header a:hover {
+  color: var(--bluehighlight2);
 }
 
 .Filter {
@@ -50,6 +56,10 @@ a:hover {
 .Logo {
   margin-right: auto;
   margin-left: 20px;
+  color: var(--white);
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0px 0px 4px var(--bluehighlight);
 }
 
 .searchBar {
