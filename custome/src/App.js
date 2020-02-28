@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./components/header.js";
 import HomePage from "./HomePage.js";
 import ResultsPage from "./ResultsPage.js";
@@ -32,6 +32,13 @@ let sortByNewest = effects => {
   return effects;
 };
 
+let search = (term,effects,users) => {
+  console.log("SEARCHING...")
+  console.log(term);
+  console.log(effects);
+  console.log(users);
+}
+
 function App() {
   // 1 = initial page, 2 = results page, 3 = profile page
   let [navigation, setNavigation] = useState(1);
@@ -55,6 +62,10 @@ function App() {
     "sharpening",
     "miscellaneous"
   ]);
+
+  useEffect(()=>{
+    search(searchString,effects,users);
+  },[searchString])
 
   // 1 = category, 2 = search, 3 = description/recommendations
   let [resultsType, setResultsType] = useState([1, "blur"]);
