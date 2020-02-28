@@ -18,13 +18,22 @@ const Card = props => {
 
   return (
     <div className="Card" onClick={cardClick}>
-      <div className="cardAuthorName">by {users.users[effect.user].name}
-      <img style={{paddingBottom: "2px"}} src={dot} className="cardDotImg" alt="." width={3} />
-      <span className="date">
+      <div className="cardAuthorName">
+        by {users.users[effect.user].name}
+        <img
+          style={{ paddingBottom: "2px" }}
+          src={dot}
+          className="cardDotImg"
+          alt="."
+          width={3}
+        />
+        <span className="date">
           {new Date(effect.date * 1000).getFullYear()}
         </span>
       </div>
-      <img src={blur} className="cardImg" alt="blur" />
+      <div className="cardImg">
+        <img src={blur} alt="blur" />
+      </div>
       <div className="cardEffectName">{effect.name}</div>
       <div className="cardText">
         <img

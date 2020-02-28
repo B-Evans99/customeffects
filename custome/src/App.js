@@ -7,7 +7,7 @@ import "./App.css";
 import data from "./data/users.js";
 
 let sortByDownloads = effects => {
-  console.log("SORTING BY DOWNLAODS");
+  console.log("SORTING BY DOWNLOADS");
   effects.sort((a, b) => {
     return a.downloads <= b.downloads;
   });
@@ -35,7 +35,9 @@ function App() {
   let [navigation, setNavigation] = useState(1);
 
   let [users, setUsers] = useState(data.users);
-  let [effects, setEffects] = useState(JSON.parse(JSON.stringify(sortByRating(data.effects))));
+  let [effects, setEffects] = useState(
+    JSON.parse(JSON.stringify(sortByRating(data.effects)))
+  );
 
   let [searchString, setSearchString] = useState("");
   let [filters, setFilters] = useState([
@@ -79,7 +81,11 @@ function App() {
           setEffects={setEffects}
         />
       ) : navigation == 2 ? (
-        <ResultsPage effects={effects} setNavigation={setNavigation} resultsType={resultsType} />
+        <ResultsPage
+          effects={effects}
+          setNavigation={setNavigation}
+          resultsType={resultsType}
+        />
       ) : (
         <ProfilePage setNavigation={setNavigation} />
       )}
