@@ -4,6 +4,7 @@ import star from "../images/star.png";
 import dot from "../images/dot.png";
 import "../App.css";
 import users from "../data/users.js";
+import { useHistory } from "react-router-dom";
 
 const Card = props => {
   let effectName = props.effect.name;
@@ -11,9 +12,11 @@ const Card = props => {
   let setResultsType = props.setResultsType;
   let effect = props.effect;
 
+  const history = useHistory();
+
   const cardClick = () => {
     setResultsType(prevstate => (prevstate = [3, effectName]));
-    setNavigation(prevstate => (prevstate = 2));
+    history.push("/results");
   };
 
   return (

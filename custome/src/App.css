@@ -8,6 +8,13 @@
   --secondary-highlight: rgb(219, 9, 97);
 }
 
+html,
+body,
+#root,
+.App {
+  min-height: 100vh;
+}
+
 a {
   color: var(--highlight);
   cursor: pointer;
@@ -97,6 +104,7 @@ a:hover {
 .HomePage {
   display: flex;
   flex-direction: row;
+  flex: 1;
 }
 
 .filterBox {
@@ -136,6 +144,8 @@ a:hover {
   background: #ddd;
   justify-content: center;
   padding-bottom: 40px;
+  align-items: flex-start;
+  align-content: flex-start;
 }
 
 .Card {
