@@ -10,10 +10,8 @@ const SearchBar = props => {
   const history = useHistory();
 
   let handleSubmit = () => {
-    console.log("blahd fbdslh fbds");
     setResultsType(prevstate => (prevstate = [2, searchString]));
-    history.goBack();
-    console.log(history);
+    history.push("/results");
   };
 
   return (
