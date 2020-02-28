@@ -15,7 +15,7 @@ const ResultBox = props => {
   let effects = props.effects;
 
   return (
-    <div className="resultBox">
+    <div className="resultBox" >
       <div className= "resultsTitle">
                     {resultsType[0] == 1? resultsType[1] + " category":
                     resultsType[0] == 2? "search results for \"" + resultsType[1] + "\"":
