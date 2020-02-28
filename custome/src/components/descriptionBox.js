@@ -1,5 +1,6 @@
 import React from "react";
 import resultImg from "../images/result.png";
+import resultImg2 from "../images/result_big.png";
 import dot from "../images/dot.png";
 import "../App.css";
 import users from "../data/users.js";
@@ -12,7 +13,7 @@ const DescriptionBox = props => {
 
   return (
     <div className="descriptionBox">
-      <img src={resultImg} alt="effect image" className="descriptionImage" />
+      <img src={resultImg2} alt="effect image" className="descriptionImage" />
       <div className="descriptionText" >
         <div className="descriptionName">{effect.name}</div>
         <div className="descriptionAuthYear">
