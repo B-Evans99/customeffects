@@ -9,7 +9,7 @@ import data from "./data/users.js";
 let sortByDownloads = effects => {
   console.log("SORTING BY DOWNLOADS");
   effects.sort((a, b) => {
-    return a.downloads <= b.downloads;
+    return b.downloads - a.downloads;
   });
   return effects;
 };
@@ -17,15 +17,16 @@ let sortByDownloads = effects => {
 let sortByRating = effects => {
   console.log("SORTING BY RATING");
   effects.sort((a, b) => {
-    return a.rating <= b.rating;
+    return b.rating - a.rating;
   });
+  console.log(effects);
   return effects;
 };
 
 let sortByNewest = effects => {
   console.log("SORTING BY NEWEST");
   effects.sort((a, b) => {
-    return a.date <= b.date;
+    return b.date - a.date;
   });
   return effects;
 };
