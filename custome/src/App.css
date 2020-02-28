@@ -233,6 +233,14 @@ a:hover {
   cursor: pointer;
 }
 
+.resultCard.selected {
+  margin-right: 0px;
+}
+
+.resultCard.selected .cardEffectName {
+  color: var(--highlight);
+}
+
 .resultCard:hover {
   margin-right: 0px;
   background: var(--bluehighlight2);

@@ -15,19 +15,14 @@ const ResultCard = props => {
 
   let effect = props.effect;
 
-  let focusStyle = {
-    boxShadow: "0px 3px 6px #464646"
-  };
-
   const resultClick = () => {
     setFocusedEffect(prevstate => (prevstate = effect));
   };
 
   return (
     <div
-      className="resultCard"
+      className={focusedEffect == effect ? "resultCard selected" : "resultCard"}
       onClick={resultClick}
-      style={focusedEffect == effect ? focusStyle : {}}
     >
       <div className="resultCardImg">
         <img src={resultImg} alt={effect.name} height={90} />
