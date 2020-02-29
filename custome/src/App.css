@@ -221,15 +221,19 @@ a:hover {
 .ResultsPage {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   padding: 0px 50px;
   max-width: 1600px;
+  flex-wrap: wrap-reverse;
 }
 
 .resultBox {
   margin: 20px 0px;
   border-radius: 10px;
-  padding-right: 40px;
+  min-width:600px;
+  max-width: 600px;
+  flex:1;
+  box-sizing:border-box;
 }
 
 .resultsTitle {
@@ -265,6 +269,7 @@ a:hover {
   line-height: 0px;
   height: 100%;
   overflow: hidden;
+  width:150px;
 }
 
 .resultCardImg img {
@@ -298,7 +303,8 @@ a:hover {
   max-width: 600px;
   background-color: #eee;
   border-radius: 10px;
-  margin: 20px 0px;
+  margin: 20px 20px;
+  box-sizing:border-box;
 }
 
 .descriptionImage {
@@ -309,6 +315,8 @@ a:hover {
 
 .descriptionText {
   margin: 0px 20px 20px;
+  height:350px;
+  overflow-y: auto;
 }
 
 .descriptionName {
