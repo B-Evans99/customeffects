@@ -107,7 +107,7 @@ a:hover {
   color: var(--white);
 }
 
-.loginButton{
+.loginButton {
   color: var(--blue-dark);
 }
 
@@ -225,15 +225,16 @@ a:hover {
   padding: 0px 50px;
   max-width: 1600px;
   flex-wrap: wrap-reverse;
+  align-items: flex-end;
 }
 
 .resultBox {
   margin: 20px 10px;
   border-radius: 10px;
-  min-width:500px;
-  max-width:800px;
-  flex:1;
-  box-sizing:border-box;
+  min-width: 500px;
+  max-width: 800px;
+  flex: 1;
+  box-sizing: border-box;
 }
 
 .resultsTitle {
@@ -269,7 +270,7 @@ a:hover {
   line-height: 0px;
   height: 100%;
   overflow: hidden;
-  width:150px;
+  width: 150px;
 }
 
 .resultCardImg img {
@@ -301,12 +302,12 @@ a:hover {
 
 .descriptionBox {
   min-width: 500px;
-  max-width:800px;
+  max-width: 800px;
   background-color: #eee;
   border-radius: 10px;
   margin: 20px 10px;
-  flex:1;
-  box-sizing:border-box;
+  flex: 1;
+  box-sizing: border-box;
 }
 
 .descriptionImage {
@@ -316,9 +317,10 @@ a:hover {
 }
 
 .descriptionText {
-  margin: 0px 20px 20px;
-  height:350px;
+  height: 350px;
   overflow-y: auto;
+  padding: 15px 25px 0px 25px;
+  box-sizing: border-box;
 }
 
 .descriptionName {
@@ -328,6 +330,7 @@ a:hover {
 
 .descriptionDesc {
   margin-top: 20px;
+  padding-bottom: 40px;
   display: flex;
   flex-wrap: wrap;
   word-wrap: normal;
