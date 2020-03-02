@@ -15,7 +15,8 @@ const Card = props => {
   const history = useHistory();
 
   const cardClick = () => {
-    setResultsType(prevstate => (prevstate = [3, effectName]));
+    //setResultsType(prevstate => (prevstate = [3, effectName]));
+    props.setSearchString(effectName);
     history.push("/results");
   };
 

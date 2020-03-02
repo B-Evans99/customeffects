@@ -29,6 +29,7 @@ const HomePage = props => {
         setResultsType={setResultsType}
         setNavigation={setNavigation}
         effects={effects}
+        setSearchString={props.setSearchString}
       />
     </div>
   );

@@ -40,7 +40,7 @@ let findResults = (searchString,effects) => {
       retEffects.push(element)
     }
   });
-  return retEffects;
+  return sortByRating(retEffects);
 }
 
 function App() {
@@ -57,7 +57,7 @@ function App() {
   let [results, setResults] = useState([]);
 
   useEffect(()=>{
-    setResults(findResults(searchString,effects));
+    setResults(JSON.parse(JSON.stringify(findResults(searchString,effects))));
     console.log(results);
   },[searchString])
 
@@ -100,6 +100,7 @@ function App() {
               filters={filters}
               categories={categories}
               setEffects={setEffects}
+              setSearchString={setSearchString}
             />
           </Route>
           <Route path="/results">
@@ -107,6 +108,7 @@ function App() {
               effects={effects}
               setNavigation={setNavigation}
               results={results}
+              searchString={searchString}
             />
           </Route>
           <Route path="/profile">

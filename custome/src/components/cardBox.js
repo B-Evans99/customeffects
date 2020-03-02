@@ -16,6 +16,7 @@ const CardBox = props => {
             effect={effect}
             setResultsType={setResultsType}
             setNavigation={setNavigation}
+            setSearchString={props.setSearchString}
           />
         );
       })}
