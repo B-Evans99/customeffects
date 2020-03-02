@@ -183,7 +183,7 @@ a:hover {
   transition: all 0.2s;
 }
 
-.Card:hover img {
+.Card:hover .cardImg img {
   opacity: 1;
   transform: scale(1.1);
 }
