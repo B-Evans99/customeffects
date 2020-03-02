@@ -5,11 +5,17 @@ Custom Effects is a GIMP plugin to let users easily run their own effect scripts
 ## Getting started
 
 Dependencies
-```node```
+
+```
+Node.js
+```
 
 To start the project, download the repository and navigate to the folder with package.json. On the command line, to start the website, run:
-```npm install
-npm start```
+
+```
+npm install
+npm start
+```
 
 
 ## Authors
