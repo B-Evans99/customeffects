@@ -36,7 +36,7 @@ let findResults = (searchString,effects) => {
   let retEffects = [];
   console.log("EFFECTS "+effects)
   effects.forEach(element => {
-    if(element.name.includes(searchString)){
+    if(element.name.includes(searchString) || element.desc.includes(searchString)){
       retEffects.push(element)
     }
   });
