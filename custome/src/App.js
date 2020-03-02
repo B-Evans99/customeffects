@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./components/header.js";
 import HomePage from "./HomePage.js";
 import ResultsPage from "./ResultsPage.js";
@@ -32,6 +32,17 @@ let sortByNewest = effects => {
   return effects;
 };
 
+let findResults = (searchString,effects) => {
+  let retEffects = [];
+  console.log("EFFECTS "+effects)
+  effects.forEach(element => {
+    if(element.name.includes(searchString)){
+      retEffects.push(element)
+    }
+  });
+  return retEffects;
+}
+
 function App() {
   // 1 = initial page, 2 = results page, 3 = profile page
   let [navigation, setNavigation] = useState(1);
@@ -42,6 +53,14 @@ function App() {
   );
 
   let [searchString, setSearchString] = useState("");
+  
+  let [results, setResults] = useState([]);
+
+  useEffect(()=>{
+    setResults(findResults(searchString,effects));
+    console.log(results);
+  },[searchString])
+
   let [filters, setFilters] = useState([
     "highest rating",
     "newest",
@@ -57,7 +76,7 @@ function App() {
   ]);
 
   // 1 = category, 2 = search, 3 = description/recommendations
-  let [resultsType, setResultsType] = useState([1, "blur"]);
+  
 
   return (
     <Router>
@@ -65,7 +84,6 @@ function App() {
         <Header
           searchString={searchString}
           setSearchString={setSearchString}
-          setResultsType={setResultsType}
           setNavigation={setNavigation}
           navigation={navigation}
           setNavigation={setNavigation}
@@ -74,7 +92,6 @@ function App() {
         <Switch>
           <Route exact path="/">
             <HomePage
-              setResultsType={setResultsType}
               effects={effects}
               setNavigation={setNavigation}
               sortByDownloads={sortByDownloads}
@@ -89,7 +106,7 @@ function App() {
             <ResultsPage
               effects={effects}
               setNavigation={setNavigation}
-              resultsType={resultsType}
+              results={results}
             />
           </Route>
           <Route path="/profile">

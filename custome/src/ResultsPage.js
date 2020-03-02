@@ -7,26 +7,20 @@ const ResultsPage = (props) => {
 
     let filters = props.filters;
     let categories = props.categories;
-    let effects = props.effects;
+    let results = props.results;
 
     let setNavigation = props.setNavigation;
 
     let resultsType = props.resultsType;
 
-    let effect = effects[0];
+    
 
-    for(var i = 0; i< effects.length; i++){
-        if(effects[i].name == resultsType[1]){
-            effect = effects[i];
-        }
-    }
-
-    let [focusedEffect, setFocusedEffect] = useState(effect);
+    let [focusedEffect, setFocusedEffect] = useState(results[0]);
     
     return (
         <div className = "ResultsPage">
-            <ResultBox resultsType={resultsType} effects={effects} focusedEffect = {focusedEffect} setFocusedEffect={setFocusedEffect} />
-            <DescriptionBox effects={effects} focusedEffect = {focusedEffect}/>
+            <ResultBox results={results} focusedEffect = {focusedEffect} setFocusedEffect={setFocusedEffect} />
+            <DescriptionBox results={results} focusedEffect = {focusedEffect}/>
         </div>
     );
 }
