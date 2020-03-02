@@ -315,6 +315,17 @@ a:hover {
   border-top-right-radius: 10px;
 }
 
+.descriptionHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.descriptionHeaderLeft {
+  display: flex;
+  flex-direction: column;
+}
+
 .descriptionText {
   margin: 0px 20px 20px;
   height:350px;
@@ -336,4 +347,10 @@ a:hover {
 .descriptionAuthYear {
   color: #464646;
   font-size: 14px;
+}
+
+.downloadButton{
+  height: 36px;
+  width: 36px;
+  margin-top: 6px;
 }
