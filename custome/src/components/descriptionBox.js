@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import resultImg from "../images/result.png";
 import resultImg2 from "../images/result_big.png";
 import dot from "../images/dot.png";
-import download from "../images/download.png";
+import downloadNoHover from "../images/download.png";
+import downloadHover from "../images/download_hover.png";
 import "../App.css";
 import users from "../data/users.js";
 
@@ -12,9 +13,13 @@ const DescriptionBox = props => {
   let setResultsType = props.setResultsType;
   let effect = props.focusedEffect;
 
+  let [hoverDownload, setHoverDownload] = useState(false);
+
   const downloadClick = () =>{
     console.log("download click");
   }
+
+  var download = hoverDownload? downloadHover: downloadNoHover;
 
   return (
     <div className="descriptionBox">
@@ -29,7 +34,9 @@ const DescriptionBox = props => {
               <span className="descriptionYear">{new Date(effect.date * 1000).getFullYear()}</span>
             </div>
           </div>
-          <img className="downloadButton" src = {download} alt="download" onClick={downloadClick} />
+          <img className="downloadButton" src = {download} alt="download" onClick={downloadClick} 
+                onMouseOver={() => setHoverDownload(true)}
+                onMouseLeave = {() => setHoverDownload(false)}/>
         </div>
         <div className="descriptionDesc">{effect.desc}</div>
       </div> 

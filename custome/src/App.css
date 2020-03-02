@@ -45,7 +45,8 @@ a:hover {
 .loginButton,
 .profileIcon,
 .Category,
-.checkbox {
+.checkbox, 
+.downloadButton {
   cursor: pointer;
 }
 
