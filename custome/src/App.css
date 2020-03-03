@@ -147,16 +147,16 @@ a:hover {
   padding-bottom: 40px;
 }
 
+
 .cardBox {
   display: flex;
   flex: 1;
   min-height: min-content;
   flex-wrap: wrap;
   background: #ddd;
-  justify-content: flex-start;
+  justify-content: center;
   padding-bottom: 40px;
-  align-items: flex-start;
-  align-content: flex-start;
+
 }
 
 .Card {

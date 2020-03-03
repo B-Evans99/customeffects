@@ -25,13 +25,14 @@ const HomePage = props => {
         filters={filters}
         setEffects={props.setEffects}
       />
+      
       <CardBox
         setResultsType={setResultsType}
         setNavigation={setNavigation}
         effects={effects}
         setSearchString={props.setSearchString}
       />
-    </div>
+      </div>
   );
 };
 
