@@ -3,6 +3,7 @@ import "../App.css";
 import profile from "../images/profile.png";
 import SearchBar from "./searchbar";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const Header = props => {
   let navigation = props.navigation;
@@ -11,16 +12,21 @@ const Header = props => {
   let setResultsType = props.setResultsType;
   let searchString = props.searchString;
 
+  const history = useHistory();
+
   const registerClick = () => {
     console.log("Register Click");
+    history.push("/profile");
   };
 
   const loginClick = () => {
     console.log("Login Click");
+    history.push("/profile");
   };
 
   const profileClick = () => {
     console.log("Profile Click");
+    history.push("/profile");
   };
 
   return (
