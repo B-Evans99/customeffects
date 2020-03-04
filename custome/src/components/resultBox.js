@@ -17,8 +17,9 @@ const ResultBox = props => {
   return (
     <div className="resultBox" >
       <div className= "resultsTitle">
-                    results for thing
-                </div>
+        {/* this functions- don't delete it again */}
+          {resultsType[0] == 1? "results for " + resultsType[1] + " category": resultsType[0] == 2? "search results for " + resultsType[1]: "results similar to " + resultsType[1]}
+       </div>
         {results.map(effect =>{
            return <ResultCard effect = {effect} focusedEffect = {focusedEffect} setFocusedEffect={setFocusedEffect} />;
         })}

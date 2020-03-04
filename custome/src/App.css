@@ -23,7 +23,7 @@ a {
   cursor: pointer;
 }
 
-a:hover {
+a:hover{
   color: var(--secondary-highlight);
 }
 
@@ -32,15 +32,21 @@ a:hover {
 }
 
 .Filter {
-  cursor: pointer;
+  display: flex; 
+  align-items: center;
 }
 
-.Filter:hover {
+.Filter input{
+  margin-top: 2px;
+}
+
+.Filter:hover, .Category:hover {
   color: var(--highlight);
 }
 
 .Logo,
 .Card,
+.Filter,
 .registerButton,
 .loginButton,
 .profileIcon,
@@ -354,4 +360,41 @@ a:hover {
   height: 36px;
   width: 36px;
   margin-top: 6px;
+}
+
+.UploadForm{
+  border: 1px solid red;
+  margin: 0px auto;
+  padding: 60px;
+  max-width: min-content;
+  display: flex; 
+  justify-content: center;
+  flex-direction: column;
+}
+
+.effectNameInput{
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+.effectNameInput span{
+  font-size: 13px;
+  color: #464646;
+}
+
+.effectNameInput input[type=text] {
+  border-bottom: 1px solid #502f2f;
+}
+
+.resetButton, .submitButton {
+  border: 1px solid #464646;
+  margin: 0px 5px;
+  width: 70px;
+  height: 24px;
+}
+.buttonInputs{
+  display: flex;
+  flex-direction: row;
+  margin: 0px auto;
 }

@@ -16,13 +16,22 @@ const ResultsPage = (props) => {
 
     
 
-    if(results.length<1 || focusedEffect==undefined){
+    if(results.length<1 || focusedEffect==undefined || props.resultsType[0] == 0){
         return <div className="ResultsPage">
             <h2>There are no search results for {props.searchString}.</h2>
         </div>
     }
-    return <div className="ResultsPage"><ResultBox results={results} focusedEffect = {focusedEffect} setFocusedEffect={setFocusedEffect} />
-            <DescriptionBox results={results} focusedEffect = {focusedEffect}/></div>
+    return (
+    <div className="ResultsPage">
+        <ResultBox 
+          results={results} 
+          resultsType={props.resultsType}
+          setResultsType={props.setResultsType}
+          focusedEffect = {focusedEffect} 
+          setFocusedEffect={setFocusedEffect} />
+        <DescriptionBox results={results} focusedEffect = {focusedEffect}/>
+    </div>
+    )
 
         
 }
