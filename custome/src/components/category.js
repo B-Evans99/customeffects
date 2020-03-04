@@ -1,6 +1,7 @@
 import React from 'react';
 import "../App.css";
 import ResultsPage from '../ResultsPage';
+import { useHistory } from "react-router-dom";
 
 
 
@@ -12,10 +13,12 @@ const Category = (props) => {
 
     let setResultsType = props.setResultsType;
 
+    const history = useHistory();
+
     const categoryClick = () =>{
         console.log(category);
         setResultsType(prevstate => prevstate = [1, category]);
-        setNavigation(prevstate => prevstate = 2);
+        history.push("/results");
     }
 
     return (

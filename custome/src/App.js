@@ -76,7 +76,7 @@ function App() {
   ]);
 
   // 1 = category, 2 = search, 3 = description/recommendations
-  
+  let [resultsType, setResultsType] = useState([3, "blur"]);
 
   return (
     <Router>
@@ -88,6 +88,8 @@ function App() {
           navigation={navigation}
           setNavigation={setNavigation}
           navigation={navigation}
+          resultsType={resultsType}
+          setResultsType={setResultsType}
         />
         <Switch>
           <Route exact path="/">
@@ -101,6 +103,8 @@ function App() {
               categories={categories}
               setEffects={setEffects}
               setSearchString={setSearchString}
+              resultsType={resultsType}
+              setResultsType={setResultsType}
             />
           </Route>
           <Route path="/results">
@@ -109,6 +113,8 @@ function App() {
               setNavigation={setNavigation}
               results={results}
               searchString={searchString}
+              resultsType={resultsType}
+              setResultsType={setResultsType}
             />
           </Route>
           <Route path="/profile">
