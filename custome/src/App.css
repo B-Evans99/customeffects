@@ -162,7 +162,7 @@ a:hover{
   background: #ddd;
   justify-content: center;
   padding-bottom: 40px;
-
+  align-content: flex-start;
 }
 
 .Card {
