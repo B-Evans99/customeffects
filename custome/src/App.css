@@ -23,7 +23,7 @@ a {
   cursor: pointer;
 }
 
-a:hover {
+a:hover{
   color: var(--secondary-highlight);
 }
 
@@ -40,7 +40,7 @@ a:hover {
   margin-top: 2px;
 }
 
-.Filter:hover {
+.Filter:hover, .Category:hover {
   color: var(--highlight);
 }
 

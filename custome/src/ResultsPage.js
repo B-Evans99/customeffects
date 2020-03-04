@@ -16,7 +16,7 @@ const ResultsPage = (props) => {
 
     
 
-    if(results.length<1 || focusedEffect==undefined){
+    if(results.length<1 || focusedEffect==undefined || props.resultsType[0] == 0){
         return <div className="ResultsPage">
             <h2>There are no search results for {props.searchString}.</h2>
         </div>

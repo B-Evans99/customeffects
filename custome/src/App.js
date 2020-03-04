@@ -75,8 +75,8 @@ function App() {
     "miscellaneous"
   ]);
 
-  // 1 = category, 2 = search, 3 = description/recommendations
-  let [resultsType, setResultsType] = useState([3, "blur"]);
+  // 0 = no search, 1 = category, 2 = search, 3 = description/recommendations
+  let [resultsType, setResultsType] = useState([0, " "]);
 
   return (
     <Router>
