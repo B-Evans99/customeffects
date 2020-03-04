@@ -1,7 +1,7 @@
 import React, {useCallback} from 'react'
 import {useDropzone} from 'react-dropzone'
 
-const MyDropzone = (props) =>{
+const Dropzone = (props) =>{
   const onDrop = useCallback(acceptedFiles => {
     // Do something with the files
   }, [])
@@ -18,4 +18,4 @@ const MyDropzone = (props) =>{
     </div>
   )
 };
-export default MyDropzone;
+export default Dropzone;

@@ -1,7 +1,7 @@
 import React from 'react';
 import UploadForm from "./components/uploadForm.js";
 import "./App.css";
-import MyDropzone from './components/dropZone.js';
+import Dropzone from './components/dropZone.js';
 
 const ProfilePage = (props) => {
 
@@ -10,7 +10,7 @@ const ProfilePage = (props) => {
     return (
         <div className = "ProfilePage">
             Profile Page
-            <MyDropzone/>
+            <Dropzone/>
             <UploadForm />
         </div>
     );
