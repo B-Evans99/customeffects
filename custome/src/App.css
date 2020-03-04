@@ -32,7 +32,12 @@ a:hover {
 }
 
 .Filter {
-  cursor: pointer;
+  display: flex; 
+  align-items: center;
+}
+
+.Filter input{
+  margin-top: 2px;
 }
 
 .Filter:hover {
@@ -41,6 +46,7 @@ a:hover {
 
 .Logo,
 .Card,
+.Filter,
 .registerButton,
 .loginButton,
 .profileIcon,
