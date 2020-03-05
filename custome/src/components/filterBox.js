@@ -8,7 +8,6 @@ const FilterBox = props => {
   let categories = props.categories;
 
   let setNavigation = props.setNavigation;
-  let setResultsType = props.setResultsType;
   return (
     <div className="filterBox">
       <FilterGroup
@@ -17,11 +16,14 @@ const FilterBox = props => {
         sortByDownloads={props.sortByDownloads}
         sortByNewest={props.sortByNewest}
         setEffects={props.setEffects}
+        setSearchString={props.setSearchString}
+
       />
       <CategoryGroup
-        setResultsType={setResultsType}
+        setSearchString={props.setSearchString}
         setNavigation={setNavigation}
         categories={categories}
+        setResultsType={props.setResultsType}
       />
     </div>
   );

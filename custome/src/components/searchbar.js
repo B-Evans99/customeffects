@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { useHistory } from "react-router-dom";
 
 const SearchBar = props => {
@@ -10,18 +10,24 @@ const SearchBar = props => {
   const history = useHistory();
 
   let handleSubmit = () => {
-    setResultsType(prevstate => (prevstate = [2, searchString]));
+    setLocalString(localString=>{
+      setSearchString(localString);
+      setResultsType(2);
+      return localString});
+    
     history.push("/results");
   };
+
+  let [localString,setLocalString] = useState(searchString)
 
   return (
     <input
       onKeyDown={e => (e.key == "Enter" ? handleSubmit() : console.log("sad"))}
       className="searchBar"
       type="text"
-      value={searchString}
+      value={localString}
       placeholder="Search for an effect.."
-      onChange={e => setSearchString(e.target.value)}
+      onChange={e => setLocalString(e.target.value)}
     />
   );
 };

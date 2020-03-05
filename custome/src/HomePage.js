@@ -16,7 +16,7 @@ const HomePage = props => {
   return (
     <div className="HomePage">
       <FilterBox
-        setResultsType={setResultsType}
+        setSearchString={props.setSearchString}
         sortByDownloads={props.sortByDownloads}
         sortByRating={props.sortByRating}
         sortByNewest={props.sortByNewest}
@@ -24,10 +24,10 @@ const HomePage = props => {
         categories={categories}
         filters={filters}
         setEffects={props.setEffects}
+        setResultsType={props.setResultsType}
       />
       
       <CardBox
-        setResultsType={setResultsType}
         setNavigation={setNavigation}
         effects={effects}
         setSearchString={props.setSearchString}

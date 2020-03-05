@@ -17,7 +17,8 @@ const Category = (props) => {
 
     const categoryClick = () =>{
         console.log(category);
-        setResultsType(prevstate => prevstate = [1, category]);
+        props.setSearchString(category);
+        setResultsType(1);
         history.push("/results");
     }
 

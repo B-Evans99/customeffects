@@ -36,7 +36,8 @@ let findResults = (searchString,effects) => {
   let retEffects = [];
   console.log("EFFECTS "+effects)
   effects.forEach(element => {
-    if(element.name.includes(searchString) || element.desc.includes(searchString)){
+    console.log("CATS: "+element.cats)
+    if(element.name.includes(searchString) || element.desc.includes(searchString) || element.cats.includes(searchString)){
       retEffects.push(element)
     }
   });
@@ -57,8 +58,8 @@ function App() {
   let [results, setResults] = useState([]);
 
   useEffect(()=>{
-    setResults(JSON.parse(JSON.stringify(findResults(searchString,effects))));
-    console.log(results);
+    setResults(JSON.parse(JSON.stringify(findResults(searchString,effects,resultsType))));
+    console.log("RESULTS "+results);
   },[searchString])
 
   let [filters, setFilters] = useState([
@@ -75,8 +76,8 @@ function App() {
     "miscellaneous"
   ]);
 
-  // 0 = no search, 1 = category, 2 = search, 3 = description/recommendations
-  let [resultsType, setResultsType] = useState([0, " "]);
+  // 0 = assume all, 1 = category, 2 = search, 3 = description/recommendations
+  let [resultsType, setResultsType] = useState(0);
 
   return (
     <Router>
@@ -103,7 +104,6 @@ function App() {
               categories={categories}
               setEffects={setEffects}
               setSearchString={setSearchString}
-              resultsType={resultsType}
               setResultsType={setResultsType}
             />
           </Route>
@@ -114,7 +114,6 @@ function App() {
               results={results}
               searchString={searchString}
               resultsType={resultsType}
-              setResultsType={setResultsType}
             />
           </Route>
           <Route path="/profile">
