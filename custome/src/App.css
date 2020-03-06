@@ -398,3 +398,19 @@ a:hover{
   flex-direction: row;
   margin: 0px auto;
 }
+
+.Dropzone{
+  display: flex;
+  flex-direction: column;
+  width: 520px;
+  height: 200px;
+  margin: 20px auto 10px;
+  border: 1px solid black;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.dropText{
+  color: #464646;
+}

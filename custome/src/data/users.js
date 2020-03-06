@@ -10,7 +10,8 @@ export default {
       reviewers: 12,
       downloads: 34,
       date: 1454284800,
-      cats: "blur"
+      cats: "blur",
+      file: null
     },
     {
       eID: 1,
@@ -22,7 +23,8 @@ export default {
       reviewers: 42,
       downloads: 72,
       date: 1528416000,
-      cats: "miscellaneous,vintage,colorization"
+      cats: "miscellaneous,vintage,colorization",
+      file: null
     },
     {
       eID: 2,
@@ -33,7 +35,8 @@ export default {
       reviewers: 3,
       downloads: 7,
       date: 1564790400,
-      cats: "blur,miscellaneous "
+      cats: "blur,miscellaneous ",
+      file: null
     },
     {
       eID: 3,
@@ -44,7 +47,8 @@ export default {
       reviewers: 55,
       downloads: 532,
       date: 1566790400,
-      cats: "vintage,colorization,miscellaneous"
+      cats: "vintage,colorization,miscellaneous",
+      file: null
     },
     {
       eID: 4,
@@ -56,7 +60,8 @@ export default {
       reviewers: 2,
       downloads: 3,
       date: 1566990400,
-      cats: "miscellaneous,rotational/skewing"
+      cats: "miscellaneous,rotational/skewing",
+      file: null
     },
     {
       eID: 5,
@@ -67,7 +72,8 @@ export default {
       reviewers: 6,
       downloads: 49,
       date: 1562930400,
-      cats: "blur,rotational/skewing"
+      cats: "blur,rotational/skewing",
+      file: null
     },
     {
       eID: 6,
@@ -78,7 +84,8 @@ export default {
       reviewers: 8,
       downloads: 83,
       date: 1562430400,
-      cats: "miscellaneous"
+      cats: "miscellaneous",
+      file: null
     }
   ],
   users: {

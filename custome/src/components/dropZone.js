@@ -1,20 +1,46 @@
-import React, {useCallback} from 'react'
+import React, {useCallback, useState} from 'react'
 import {useDropzone} from 'react-dropzone'
+import data from "../data/users.js";
 
 const Dropzone = (props) =>{
+
+  let [files, setFiles] = useState([]);
+  const maxSize = 8048576;
+
   const onDrop = useCallback(acceptedFiles => {
     // Do something with the files
+    console.log(acceptedFiles);
+    setFiles(acceptedFiles);
   }, [])
-  const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
+  const {getRootProps, getInputProps, isDragActive, isDragReject, rejectedFiles} = useDropzone({
+    onDrop,
+    acceptedFiles: ['application/zip', 'application/x-7z-compressed'],
+    minSize: 0,
+    maxSize,
+  });
 
+  const isFileTooLarge = rejectedFiles.length > 0 && rejectedFiles[0].size > maxSize;
+  
   return (
-    <div {...getRootProps()}>
+    <div {...getRootProps()} className="Dropzone">
       <input {...getInputProps()} />
-      {
-        isDragActive ?
-          <p>Drop the files here ...</p> :
-          <p>Drag 'n' drop some files here, or click to select files</p>
-      }
+      <div className="dropText">
+      {!isDragActive && files.length == 0 && 'Click here or drop a file to upload!'}
+        {isDragActive && files.length == 0 && !isDragReject && "Drop it like it's hot!"}
+        {isDragReject && files.length == 0 && "File type not accepted, sorry!"}
+        {isFileTooLarge && (
+          <div className="fileSizeWarning">
+            File is too large.
+          </div>
+        )}
+      </div>
+      <div className="uploadedFiles">
+        {files.length > 0 && files.map(acceptedFile => (
+        <div className="uploadedFile">
+          {acceptedFile.name}
+        </div>
+        ))}
+      </div>
     </div>
   )
 };
