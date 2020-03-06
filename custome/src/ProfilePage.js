@@ -12,7 +12,7 @@ const ProfilePage = (props) => {
             Profile Page
             {/* This may need to live in the form - idk 
                 here's the link to the website: https://github.com/react-dropzone/react-dropzone */}
-            <Dropzone/>
+            <Dropzone />
             <UploadForm />
         </div>
     );
