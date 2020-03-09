@@ -4,7 +4,9 @@ import data from "../data/users.js";
 
 const Dropzone = (props) =>{
 
-  let [files, setFiles] = useState([]);
+  let files = props.files;
+  let setFiles = props.setFiles;
+
   const maxSize = 8048576;
 
   const onDrop = useCallback(acceptedFiles => {

@@ -372,18 +372,18 @@ a:hover{
   flex-direction: column;
 }
 
-.effectNameInput{
+.effectNameLabel{
   display: flex;
   flex-direction: column;
   width: 400px;
 }
 
-.effectNameInput span{
+.effectNameLabel span{
   font-size: 13px;
   color: #464646;
 }
 
-.effectNameInput input[type=text] {
+.effectNameLabel input[type=text] {
   border-bottom: 1px solid #502f2f;
 }
 
