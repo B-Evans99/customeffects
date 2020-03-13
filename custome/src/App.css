@@ -372,19 +372,30 @@ a:hover{
   flex-direction: column;
 }
 
-.effectNameLabel{
+.effectNameLabel, .effectDescLabel{
   display: flex;
   flex-direction: column;
   width: 400px;
+  margin: 15px 0px;
 }
 
-.effectNameLabel span{
+.effectDescLabel{
+  width: 520px;
+}
+
+.effectNameLabel span, .effectDescLabel span{
   font-size: 13px;
   color: #464646;
 }
 
 .effectNameLabel input[type=text] {
   border-bottom: 1px solid #502f2f;
+}
+
+.effectDescInput{
+  border: 1px solid #464646;
+  width: 520px;
+  border-radius: 10px;
 }
 
 .resetButton, .submitButton {

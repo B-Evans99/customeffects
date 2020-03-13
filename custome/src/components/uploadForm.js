@@ -9,6 +9,7 @@ const UploadForm = props => {
 
   let [files, setFiles] = useState([]);
   let [name, setName] = useState("");
+  let [desc, setDesc] = useState("");
   let [cats, setCats] = useState([]);
   let [newEffect, setNewEffect] = useState({name:"", author: "", id: 0, files: [], image: emptyImg, desc: "", cat: [] });
   let [clearChecks, setClearChecks] = useState(0);
@@ -45,13 +46,22 @@ const UploadForm = props => {
             />
             <span>effect name</span>
         </label>
-        
+        <label className="effectDescLabel">
+            <textarea
+                type="text"  
+                className="effectDescInput"
+                value={desc}
+                onChange = {e => setDesc(e.target.value)}
+            />
+            <span>effect description</span>
+        </label>
+        <div className="formCategories">
           {props.categories.map((category, i)=> {
             return(              
                 <CatCheck category={category} cats={cats} setCats={setCats} clearChecks={clearChecks}/>
             );
           })}
-        
+        </div>
         <div className="buttonInputs">
             <input className="resetButton" value="cancel" type="button" onClick={resetClick}/>
             <input className="submitButton" value="ok" type="button" onClick={submitClick} />
