@@ -365,7 +365,8 @@ a:hover{
 .UploadForm{
   border: 1px solid red;
   margin: 0px auto;
-  padding: 60px;
+  padding: 30px 60px;
+  margin-bottom: 40px;
   max-width: min-content;
   display: flex; 
   justify-content: center;
@@ -375,7 +376,7 @@ a:hover{
 .effectNameLabel, .effectDescLabel{
   display: flex;
   flex-direction: column;
-  width: 400px;
+  width: 520px;
   margin: 15px 0px;
 }
 
@@ -383,7 +384,7 @@ a:hover{
   width: 520px;
 }
 
-.effectNameLabel span, .effectDescLabel span{
+.effectNameLabel span, .effectDescLabel span, .dropContText{
   font-size: 13px;
   color: #464646;
 }
@@ -396,6 +397,44 @@ a:hover{
   border: 1px solid #464646;
   width: 520px;
   border-radius: 10px;
+  padding: 10px;
+}
+
+.formCategories{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.formCatText{
+  font-size: 14px;
+  color: #464646;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.formCatGroup {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  min-width: min-content;
+  margin-left: 20px;
+}
+
+.catsLabel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 5px 10px;
+}
+
+.catsText{
+  font-size: 16px;
+}
+
+.catCheck{
+  margin-left: 5px;
+  margin-top: 2px;
 }
 
 .resetButton, .submitButton {
@@ -407,7 +446,7 @@ a:hover{
 .buttonInputs{
   display: flex;
   flex-direction: row;
-  margin: 0px auto;
+  margin:15px auto;
 }
 
 .Dropzone{
@@ -415,11 +454,15 @@ a:hover{
   flex-direction: column;
   width: 520px;
   height: 200px;
-  margin: 20px auto 10px;
+  margin: 20px auto 0px;
   border: 1px solid black;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
+}
+
+.dropContainer{
+  margin-bottom: 15px;
 }
 
 .dropText{

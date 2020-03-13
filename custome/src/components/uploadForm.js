@@ -36,8 +36,12 @@ const UploadForm = props => {
     <form className="UploadForm">
       {/* This may need to live in the form - idk 
                 here's the link to the website: https://github.com/react-dropzone/react-dropzone */}
+        <div className="dropContainer">
         <Dropzone files = {files} setFiles = {setFiles} />
+        <span className="dropContText">effect files</span>
+        </div>
         <label className="effectNameLabel">
+            
             <input
                 type="text"  
                 className="effectNameInput"
@@ -56,11 +60,14 @@ const UploadForm = props => {
             <span>effect description</span>
         </label>
         <div className="formCategories">
+        <div className="formCatText">Please select all categories that apply:</div>
+        <div className="formCatGroup">
           {props.categories.map((category, i)=> {
             return(              
                 <CatCheck category={category} cats={cats} setCats={setCats} clearChecks={clearChecks}/>
             );
           })}
+        </div>
         </div>
         <div className="buttonInputs">
             <input className="resetButton" value="cancel" type="button" onClick={resetClick}/>
