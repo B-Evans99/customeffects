@@ -60,7 +60,7 @@ const UploadForm = props => {
             <span>effect description</span>
         </label>
         <div className="formCategories">
-        <div className="formCatText">Please select all categories that apply:</div>
+        <div className="formCatText">please select all categories that apply:</div>
         <div className="formCatGroup">
           {props.categories.map((category, i)=> {
             return(              

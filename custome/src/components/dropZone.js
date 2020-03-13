@@ -27,9 +27,9 @@ const Dropzone = (props) =>{
     <div {...getRootProps()} className="Dropzone">
       <input {...getInputProps()} />
       <div className="dropText">
-      {!isDragActive && files.length == 0 && 'Click here or drop a file to upload!'}
-        {isDragActive && files.length == 0 && !isDragReject && "Drop the file to upload it."}
-        {isDragReject && files.length == 0 && "Please use a *.zip file!"}
+      {!isDragActive && files.length == 0 && 'click here or drop a file to upload!'}
+        {isDragActive && files.length == 0 && !isDragReject && "drop the file to upload it."}
+        {isDragReject && files.length == 0 && "please use a *.zip file!"}
         {isFileTooLarge && (
           <div className="fileSizeWarning">
             File is too large.
