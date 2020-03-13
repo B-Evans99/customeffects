@@ -375,6 +375,10 @@ a:hover{
   flex-direction: column;
 }
 
+.uploadTitle {
+  color: var(--blue-dark);
+}
+
 .effectNameLabel, .effectDescLabel{
   display: flex;
   flex-direction: column;

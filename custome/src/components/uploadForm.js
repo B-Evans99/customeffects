@@ -36,6 +36,7 @@ const UploadForm = props => {
 
   return (
     <form className="UploadForm">
+      <span className="uploadTitle">upload effect</span>
       {/* This may need to live in the form - idk 
                 here's the link to the website: https://github.com/react-dropzone/react-dropzone */}
         <div className="dropContainer">
