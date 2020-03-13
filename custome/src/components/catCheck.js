@@ -14,10 +14,11 @@ const CatCheck = (props) => {
         })
     }, [checked]);
 
+  
     return(
         <label className="catsLabel">
             <span className="catsText"> {category} </span> 
-            <input type="checkbox" className="catCheck" checked={checked} onChange={e => setChecked(check => check = !check)}/>
+            <input type="checkbox" className="catCheck" checked={cats.length == 0? false: checked} onChange={e => setChecked(check => check = !check)}/>
         </label>
     );
 

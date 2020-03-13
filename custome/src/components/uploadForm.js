@@ -11,10 +11,12 @@ const UploadForm = props => {
   let [name, setName] = useState("");
   let [cats, setCats] = useState([]);
   let [newEffect, setNewEffect] = useState({name:"", author: "", id: 0, files: [], image: emptyImg, desc: "", cat: [] });
+  let [clearChecks, setClearChecks] = useState(0);
 
   const clearFields = () =>{
     setName("");
     setFiles([]);
+    cats.length = 0;
   }
 
   const resetClick = () =>{
@@ -46,7 +48,7 @@ const UploadForm = props => {
         
           {props.categories.map((category, i)=> {
             return(              
-                <CatCheck category={category} cats={cats} setCats={setCats} />
+                <CatCheck category={category} cats={cats} setCats={setCats} clearChecks={clearChecks}/>
             );
           })}
         
