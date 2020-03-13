@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { useHistory } from "react-router-dom";
 import Dropzone from './dropZone.js';
+import ImageDrop from './imageDrop.js';
 import CatCheck from "./catCheck.js";
 import emptyImg from "../images/emptyImg.png";
 import "../App.css";
@@ -8,6 +9,7 @@ import "../App.css";
 const UploadForm = props => {
 
   let [files, setFiles] = useState([]);
+  let [img, setImg] = useState([]);
   let [name, setName] = useState("");
   let [desc, setDesc] = useState("");
   let [cats, setCats] = useState([]);
@@ -37,8 +39,12 @@ const UploadForm = props => {
       {/* This may need to live in the form - idk 
                 here's the link to the website: https://github.com/react-dropzone/react-dropzone */}
         <div className="dropContainer">
-        <Dropzone files = {files} setFiles = {setFiles} />
-        <span className="dropContText">effect files</span>
+          <Dropzone files = {files} setFiles = {setFiles} />
+          <span className="dropContText">effect files</span>
+        </div>
+        <div className="dropContainer">
+          <ImageDrop img={img} setImg={setImg} />
+          <span className="dropContText">effect image</span>
         </div>
         <label className="effectNameLabel">
             
