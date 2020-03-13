@@ -1,12 +1,15 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { useHistory } from "react-router-dom";
 import Dropzone from './dropZone.js';
+import CatCheck from "./catCheck.js";
 import emptyImg from "../images/emptyImg.png";
+import "../App.css";
 
 const UploadForm = props => {
 
   let [files, setFiles] = useState([]);
   let [name, setName] = useState("");
+  let [cats, setCats] = useState([]);
   let [newEffect, setNewEffect] = useState({name:"", author: "", id: 0, files: [], image: emptyImg, desc: "", cat: [] });
 
   const clearFields = () =>{
@@ -24,6 +27,7 @@ const UploadForm = props => {
     setNewEffect(newEffect=> newEffect = tempEffect);
     console.log(newEffect);
   }
+  
 
   return (
     <form className="UploadForm">
@@ -39,6 +43,13 @@ const UploadForm = props => {
             />
             <span>effect name</span>
         </label>
+        
+          {props.categories.map((category, i)=> {
+            return(              
+                <CatCheck category={category} cats={cats} setCats={setCats} />
+            );
+          })}
+        
         <div className="buttonInputs">
             <input className="resetButton" value="cancel" type="button" onClick={resetClick}/>
             <input className="submitButton" value="ok" type="button" onClick={submitClick} />

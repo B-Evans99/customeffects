@@ -9,7 +9,7 @@ const ProfilePage = (props) => {
     return (
         <div className = "ProfilePage">
             Profile Page            
-            <UploadForm />
+            <UploadForm categories = {props.categories} />
         </div>
     );
 }

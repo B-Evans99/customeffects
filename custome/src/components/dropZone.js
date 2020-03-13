@@ -28,8 +28,8 @@ const Dropzone = (props) =>{
       <input {...getInputProps()} />
       <div className="dropText">
       {!isDragActive && files.length == 0 && 'Click here or drop a file to upload!'}
-        {isDragActive && files.length == 0 && !isDragReject && "Drop it like it's hot!"}
-        {isDragReject && files.length == 0 && "File type not accepted, sorry!"}
+        {isDragActive && files.length == 0 && !isDragReject && "Drop the file to upload it."}
+        {isDragReject && files.length == 0 && "Please use a *.zip file!"}
         {isFileTooLarge && (
           <div className="fileSizeWarning">
             File is too large.
