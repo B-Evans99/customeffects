@@ -363,22 +363,34 @@ a:hover{
 }
 
 .UploadForm{
-  border: 1px solid red;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 5px 20px var(--blue-dark);
   margin: 0px auto;
-  padding: 60px;
+  padding: 30px 60px;
+  margin-bottom: 40px;
   max-width: min-content;
   display: flex; 
   justify-content: center;
   flex-direction: column;
 }
 
-.effectNameLabel{
-  display: flex;
-  flex-direction: column;
-  width: 400px;
+.uploadTitle {
+  color: var(--blue-dark);
 }
 
-.effectNameLabel span{
+.effectNameLabel, .effectDescLabel{
+  display: flex;
+  flex-direction: column;
+  width: 520px;
+  margin: 15px 0px;
+}
+
+.effectDescLabel{
+  width: 520px;
+}
+
+.effectNameLabel span, .effectDescLabel span, .dropContText{
   font-size: 13px;
   color: #464646;
 }
@@ -387,30 +399,95 @@ a:hover{
   border-bottom: 1px solid #502f2f;
 }
 
-.resetButton, .submitButton {
+.effectDescInput{
   border: 1px solid #464646;
-  margin: 0px 5px;
-  width: 70px;
-  height: 24px;
+  width: 500px;
+  border-radius: 10px;
+  padding: 10px;
 }
+
+.formCategories{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.formCatText{
+  font-size: 14px;
+  color: #464646;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.formCatGroup {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  min-width: min-content;
+  margin-left: 20px;
+}
+
+.catsLabel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 5px 10px;
+}
+
+.catsText{
+  font-size: 16px;
+}
+
+.catCheck{
+  margin-left: 5px;
+  margin-top: 2px;
+}
+
+.resetButton {
+  margin: 0px 5px;
+  width: 76px;
+  height: 28px;
+  font-size: 16px;
+  color: var(--blue-dark);
+}
+
+.submitButton {
+  background-color: var(--blue-dark);
+  margin: 0px 5px;
+  width: 76px;
+  height: 28px;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
 .buttonInputs{
   display: flex;
   flex-direction: row;
-  margin: 0px auto;
+  margin:15px auto;
 }
 
-.Dropzone{
+.Dropzone, .ImageDrop{
   display: flex;
   flex-direction: column;
   width: 520px;
   height: 200px;
-  margin: 20px auto 10px;
-  border: 1px solid black;
+  margin: 20px auto 0px;
+  border: 1px solid var(--blue-dark);
   justify-content: center;
   align-items: center;
   border-radius: 10px;
 }
 
+.ImageDrop{
+  height: 100px;
+}
+
+.dropContainer{
+  margin-bottom: 15px;
+}
+
 .dropText{
   color: #464646;
+  font-size: 14px;
 }

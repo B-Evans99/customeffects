@@ -2,21 +2,21 @@ import React, {useCallback, useState} from 'react'
 import {useDropzone} from 'react-dropzone'
 import data from "../data/users.js";
 
-const Dropzone = (props) =>{
+const ImageDrop = (props) =>{
 
-  let files = props.files;
-  let setFiles = props.setFiles;
+  let img = props.img;
+  let setImg = props.setImg;
 
   const maxSize = 8048576;
 
   const onDrop = useCallback(acceptedFiles => {
     // Do something with the files
     console.log(acceptedFiles);
-    setFiles(acceptedFiles);
+    setImg(acceptedFiles);
   }, [])
   const {getRootProps, getInputProps, isDragActive, isDragReject, rejectedFiles} = useDropzone({
     onDrop,
-    acceptedFiles: ['application/zip', 'application/x-7z-compressed'],
+    acceptedFiles: ['image/png', 'image/tiff', 'image/svg+xml', 'image/jpeg'],
     minSize: 0,
     maxSize,
   });
@@ -24,12 +24,12 @@ const Dropzone = (props) =>{
   const isFileTooLarge = rejectedFiles.length > 0 && rejectedFiles[0].size > maxSize;
   
   return (
-    <div {...getRootProps()} className="Dropzone">
+    <div {...getRootProps()} className="ImageDrop">
       <input {...getInputProps()} />
       <div className="dropText">
-      {!isDragActive && files.length == 0 && 'click here or drop a file to upload!'}
-        {isDragActive && files.length == 0 && !isDragReject && "drop the file to upload it."}
-        {isDragReject && files.length == 0 && "please use a *.zip file!"}
+      {!isDragActive && img.length == 0 && 'click here or drop an image file to upload!'}
+        {isDragActive && img.length == 0 && !isDragReject && "drop the file to upload it."}
+        {isDragReject && img.length == 0 && "please use an image file!"}
         {isFileTooLarge && (
           <div className="fileSizeWarning">
             File is too large.
@@ -37,7 +37,7 @@ const Dropzone = (props) =>{
         )}
       </div>
       <div className="uploadedFiles">
-        {files.length > 0 && files.map(acceptedFile => (
+        {img.length > 0 && img.map(acceptedFile => (
         <div className="uploadedFile">
           {acceptedFile.name}
         </div>
@@ -46,4 +46,4 @@ const Dropzone = (props) =>{
     </div>
   )
 };
-export default Dropzone;
+export default ImageDrop;

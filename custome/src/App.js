@@ -117,7 +117,7 @@ function App() {
             />
           </Route>
           <Route path="/profile">
-            <ProfilePage setNavigation={setNavigation} />
+            <ProfilePage setNavigation={setNavigation} categories = {categories} />
           </Route>
         </Switch>
       </div>
