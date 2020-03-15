@@ -14,6 +14,8 @@ def custom_effects(file):
 
     #copy file to new location
     shutil.copy(src, dest)
+
+    pdb.gimp_message("Script loaded. Please close and reopen GIMP to use the script")
     
     return
 
