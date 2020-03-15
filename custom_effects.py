@@ -9,8 +9,8 @@ def custom_effects(file):
 
     #get destination directory
     path = os.path.dirname(os.path.realpath(__file__))
-    directory = path.split("lib")[0] 
-    dest = directory + "\\share\\gimp\\2.0\\scripts"
+    directory = path.split("plug-ins")[0] 
+    dest = directory + "\\scripts"
 
     #copy file to new location
     shutil.copy(src, dest)
@@ -27,7 +27,7 @@ register(
         "Custom-Effects",
         "RGB*, GRAY*",
         [
-            (PF_FILENAME, "pf_afile", "Choose File:", "")
+            (PF_FILENAME, "file", "Choose File:", "")
         ],
         [],
         custom_effects,
