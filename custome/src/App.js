@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./components/header.js";
 import HomePage from "./HomePage.js";
 import ResultsPage from "./ResultsPage.js";
@@ -32,6 +32,18 @@ let sortByNewest = effects => {
   return effects;
 };
 
+let findResults = (searchString,effects) => {
+  let retEffects = [];
+  console.log("EFFECTS "+effects)
+  effects.forEach(element => {
+    console.log("CATS: "+element.cats)
+    if(element.name.includes(searchString) || element.desc.includes(searchString) || element.cats.includes(searchString)){
+      retEffects.push(element)
+    }
+  });
+  return sortByRating(retEffects);
+}
+
 function App() {
   // 1 = initial page, 2 = results page, 3 = profile page
   let [navigation, setNavigation] = useState(1);
@@ -42,6 +54,14 @@ function App() {
   );
 
   let [searchString, setSearchString] = useState("");
+  
+  let [results, setResults] = useState([]);
+
+  useEffect(()=>{
+    setResults(JSON.parse(JSON.stringify(findResults(searchString,effects,resultsType))));
+    console.log("RESULTS "+results);
+  },[searchString])
+
   let [filters, setFilters] = useState([
     "highest rating",
     "newest",
@@ -56,8 +76,8 @@ function App() {
     "miscellaneous"
   ]);
 
-  // 1 = category, 2 = search, 3 = description/recommendations
-  let [resultsType, setResultsType] = useState([1, "blur"]);
+  // 0 = assume all, 1 = category, 2 = search, 3 = description/recommendations
+  let [resultsType, setResultsType] = useState(0);
 
   return (
     <Router>
@@ -65,16 +85,16 @@ function App() {
         <Header
           searchString={searchString}
           setSearchString={setSearchString}
+          setNavigation={setNavigation}
+          navigation={navigation}
+          setNavigation={setNavigation}
+          navigation={navigation}
+          resultsType={resultsType}
           setResultsType={setResultsType}
-          setNavigation={setNavigation}
-          navigation={navigation}
-          setNavigation={setNavigation}
-          navigation={navigation}
         />
         <Switch>
           <Route exact path="/">
             <HomePage
-              setResultsType={setResultsType}
               effects={effects}
               setNavigation={setNavigation}
               sortByDownloads={sortByDownloads}
@@ -83,17 +103,21 @@ function App() {
               filters={filters}
               categories={categories}
               setEffects={setEffects}
+              setSearchString={setSearchString}
+              setResultsType={setResultsType}
             />
           </Route>
           <Route path="/results">
             <ResultsPage
               effects={effects}
               setNavigation={setNavigation}
+              results={results}
+              searchString={searchString}
               resultsType={resultsType}
             />
           </Route>
           <Route path="/profile">
-            <ProfilePage setNavigation={setNavigation} />
+            <ProfilePage setNavigation={setNavigation} categories = {categories} />
           </Route>
         </Switch>
       </div>

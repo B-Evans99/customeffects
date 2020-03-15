@@ -23,7 +23,7 @@ a {
   cursor: pointer;
 }
 
-a:hover {
+a:hover{
   color: var(--secondary-highlight);
 }
 
@@ -32,20 +32,27 @@ a:hover {
 }
 
 .Filter {
-  cursor: pointer;
+  display: flex; 
+  align-items: center;
 }
 
-.Filter:hover {
+.Filter input{
+  margin-top: 2px;
+}
+
+.Filter:hover, .Category:hover {
   color: var(--highlight);
 }
 
 .Logo,
 .Card,
+.Filter,
 .registerButton,
 .loginButton,
 .profileIcon,
 .Category,
-.checkbox {
+.checkbox, 
+.downloadButton {
   cursor: pointer;
 }
 
@@ -146,15 +153,15 @@ a:hover {
   padding-bottom: 40px;
 }
 
+
 .cardBox {
   display: flex;
   flex: 1;
   min-height: min-content;
   flex-wrap: wrap;
   background: #ddd;
-  justify-content: flex-start;
+  justify-content: center;
   padding-bottom: 40px;
-  align-items: flex-start;
   align-content: flex-start;
 }
 
@@ -183,7 +190,7 @@ a:hover {
   transition: all 0.2s;
 }
 
-.Card:hover img {
+.Card:hover .cardImg img {
   opacity: 1;
   transform: scale(1.1);
 }
@@ -316,6 +323,17 @@ a:hover {
   border-top-right-radius: 10px;
 }
 
+.descriptionHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.descriptionHeaderLeft {
+  display: flex;
+  flex-direction: column;
+}
+
 .descriptionText {
   height: 350px;
   overflow-y: auto;
@@ -337,6 +355,142 @@ a:hover {
 }
 
 .descriptionAuthYear {
+  color: #464646;
+  font-size: 14px;
+}
+
+.downloadButton{
+  height: 36px;
+  width: 36px;
+  margin-top: 6px;
+}
+
+.UploadForm{
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 5px 20px var(--blue-dark);
+  margin: 0px auto;
+  padding: 30px 60px;
+  margin-bottom: 40px;
+  max-width: min-content;
+  display: flex; 
+  justify-content: center;
+  flex-direction: column;
+}
+
+.uploadTitle {
+  color: var(--blue-dark);
+}
+
+.effectNameLabel, .effectDescLabel{
+  display: flex;
+  flex-direction: column;
+  width: 520px;
+  margin: 15px 0px;
+}
+
+.effectDescLabel{
+  width: 520px;
+}
+
+.effectNameLabel span, .effectDescLabel span, .dropContText{
+  font-size: 13px;
+  color: #464646;
+}
+
+.effectNameLabel input[type=text] {
+  border-bottom: 1px solid #502f2f;
+}
+
+.effectDescInput{
+  border: 1px solid #464646;
+  width: 500px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.formCategories{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.formCatText{
+  font-size: 14px;
+  color: #464646;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.formCatGroup {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  min-width: min-content;
+  margin-left: 20px;
+}
+
+.catsLabel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 5px 10px;
+}
+
+.catsText{
+  font-size: 16px;
+}
+
+.catCheck{
+  margin-left: 5px;
+  margin-top: 2px;
+}
+
+.resetButton {
+  margin: 0px 5px;
+  width: 76px;
+  height: 28px;
+  font-size: 16px;
+  color: var(--blue-dark);
+}
+
+.submitButton {
+  background-color: var(--blue-dark);
+  margin: 0px 5px;
+  width: 76px;
+  height: 28px;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.buttonInputs{
+  display: flex;
+  flex-direction: row;
+  margin:15px auto;
+}
+
+.Dropzone, .ImageDrop{
+  display: flex;
+  flex-direction: column;
+  width: 520px;
+  height: 200px;
+  margin: 20px auto 0px;
+  border: 1px solid var(--blue-dark);
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.ImageDrop{
+  height: 100px;
+}
+
+.dropContainer{
+  margin-bottom: 15px;
+}
+
+.dropText{
   color: #464646;
   font-size: 14px;
 }
