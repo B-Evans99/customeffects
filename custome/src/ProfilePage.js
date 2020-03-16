@@ -8,10 +8,9 @@ const ProfilePage = props => {
   return (
     <div className="ProfilePage">
       <span style={{ color: "#800", padding: "20px", display: "block" }}>
-        This will let users add new effects to the database. As of now, the
-        database is incomplete, so users cannot make and access accounts.
-        Therefore, <b>hit the OK button to create a new effect.</b> The effect
-        will be called <b>Piper's Effect.</b>
+        This will let users add new effects to the database. As of now, only the
+        name, description, and categories are saved, and because the database is
+        still in progress, new effects disappear on site reload.
       </span>
       <UploadForm categories={props.categories} setEffects={props.setEffects} />
     </div>

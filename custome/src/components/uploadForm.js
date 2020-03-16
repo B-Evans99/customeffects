@@ -38,8 +38,10 @@ const UploadForm = props => {
 
   const dummySubmitClick = () => {
     props.setEffects(effects => {
+      let num = Object.keys(effects).length;
+
       let newEffect = {
-        eID: 7,
+        eID: num,
         user: 4,
         name: "Piper's Effect",
         desc: "Animated snow falls down the image.",
@@ -51,10 +53,15 @@ const UploadForm = props => {
         script: "AnimatedSnow.scm"
       };
 
-      effects[newEffect.eID] = newEffect;
+      newEffect.name = name;
+      newEffect.desc = desc;
+      newEffect.cats = cats.join();
+
+      effects[num] = newEffect;
 
       return JSON.parse(JSON.stringify(effects));
     });
+    clearFields();
     alert("Visit the homepage to see your new effect.");
   };
 
