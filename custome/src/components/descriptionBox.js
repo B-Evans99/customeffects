@@ -41,7 +41,7 @@ const DescriptionBox = props => {
               </span>
             </div>
           </div>
-          <Link to={"../data/" + effect.script} target="_blank" download>
+          <Link to={effect.script} target="_blank" download>
             <img
               className="downloadButton"
               src={download}
