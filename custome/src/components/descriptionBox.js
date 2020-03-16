@@ -19,7 +19,8 @@ const DescriptionBox = props => {
   
   const downloadClick = () =>{
     console.log("download click")
-    fileDownload(effect.name, 'effectFile.txt');
+    let effectDownload = effect.name + "\n" + effect.desc;
+    fileDownload(effectDownload, 'effectFile.txt');
   }
 
   var download = hoverDownload? downloadHover: downloadNoHover;
