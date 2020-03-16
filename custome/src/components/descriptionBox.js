@@ -6,6 +6,7 @@ import downloadNoHover from "../images/download.png";
 import downloadHover from "../images/download_hover.png";
 import "../App.css";
 import users from "../data/users.js";
+var fileDownload = require('js-file-download');
 
 const DescriptionBox = props => {
  
@@ -15,8 +16,11 @@ const DescriptionBox = props => {
 
   let [hoverDownload, setHoverDownload] = useState(false);
 
+  
   const downloadClick = () =>{
-    console.log("download click");
+    console.log("download click")
+    let effectDownload = effect.name + "\n" + effect.desc;
+    fileDownload(effectDownload, 'effectFile.txt');
   }
 
   var download = hoverDownload? downloadHover: downloadNoHover;
