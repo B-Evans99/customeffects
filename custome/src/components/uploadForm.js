@@ -19,6 +19,8 @@ const UploadForm = props => {
   const clearFields = () =>{
     setName("");
     setFiles([]);
+    setImg([]);
+    setDesc("");
     cats.length = 0;
   }
 
@@ -29,8 +31,15 @@ const UploadForm = props => {
   const submitClick = () => {
     console.log(newEffect);
     let tempEffect = {name: name, author: "", id: 0, files: files[0], image: emptyImg, desc: "", cat: [] };
+    tempEffect.name = name;
+    tempEffect.author = "yours";
+    tempEffect.files = files;
+    tempEffect.image = img;
+    tempEffect.desc = desc;
+    tempEffect.cat = cats;
     setNewEffect(newEffect=> newEffect = tempEffect);
     console.log(newEffect);
+    clearFields();
   }
   
 
