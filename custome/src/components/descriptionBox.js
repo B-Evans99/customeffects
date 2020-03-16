@@ -16,12 +16,6 @@ const DescriptionBox = props => {
 
   let [hoverDownload, setHoverDownload] = useState(false);
 
-  const downloadClick = () => {
-    console.log("download click");
-    // let effectDownload = effect.name + "\n" + effect.desc;
-    // fileDownload(effectDownload, "effectFile.txt");
-  };
-
   var download = hoverDownload ? downloadHover : downloadNoHover;
 
   return (
@@ -52,13 +46,19 @@ const DescriptionBox = props => {
               className="downloadButton"
               src={download}
               alt="download"
-              onClick={downloadClick}
               onMouseOver={() => setHoverDownload(true)}
               onMouseLeave={() => setHoverDownload(false)}
             />
           </Link>
         </div>
-        <div className="descriptionDesc">{effect.desc}</div>
+        <div className="descriptionDesc">
+          {effect.desc}
+
+          <span style={{ color: "#800" }}>
+            All of the effects currently download one example script,{" "}
+            <b>AnimatedSnow.scm</b>.
+          </span>
+        </div>
       </div>
     </div>
   );

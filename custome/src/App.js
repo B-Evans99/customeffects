@@ -32,17 +32,21 @@ let sortByNewest = effects => {
   return effects;
 };
 
-let findResults = (searchString,effects) => {
+let findResults = (searchString, effects) => {
   let retEffects = [];
-  console.log("EFFECTS "+effects)
+  console.log("EFFECTS " + effects);
   effects.forEach(element => {
-    console.log("CATS: "+element.cats)
-    if(element.name.includes(searchString) || element.desc.includes(searchString) || element.cats.includes(searchString)){
-      retEffects.push(element)
+    console.log("CATS: " + element.cats);
+    if (
+      element.name.includes(searchString) ||
+      element.desc.includes(searchString) ||
+      element.cats.includes(searchString)
+    ) {
+      retEffects.push(element);
     }
   });
   return sortByRating(retEffects);
-}
+};
 
 function App() {
   // 1 = initial page, 2 = results page, 3 = profile page
@@ -54,13 +58,17 @@ function App() {
   );
 
   let [searchString, setSearchString] = useState("");
-  
+
   let [results, setResults] = useState([]);
 
-  useEffect(()=>{
-    setResults(JSON.parse(JSON.stringify(findResults(searchString,effects,resultsType))));
-    console.log("RESULTS "+results);
-  },[searchString])
+  useEffect(() => {
+    setResults(
+      JSON.parse(
+        JSON.stringify(findResults(searchString, effects, resultsType))
+      )
+    );
+    console.log("RESULTS " + results);
+  }, [searchString]);
 
   let [filters, setFilters] = useState([
     "highest rating",
@@ -117,7 +125,11 @@ function App() {
             />
           </Route>
           <Route path="/profile">
-            <ProfilePage setNavigation={setNavigation} categories = {categories} />
+            <ProfilePage
+              setNavigation={setNavigation}
+              categories={categories}
+              setEffects={setEffects}
+            />
           </Route>
         </Switch>
       </div>

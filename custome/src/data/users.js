@@ -109,6 +109,11 @@ export default {
       name: "tweedy",
       password: "password",
       github: "tweedy"
+    },
+    4: {
+      name: "numberOneProf",
+      password: "password",
+      github: "numberOneProf"
     }
   }
 };
