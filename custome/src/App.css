@@ -40,8 +40,12 @@ a:hover{
   margin-top: 2px;
 }
 
-.Filter:hover, .Category:hover {
+.Filter:hover, .Category:hover, .resetButton:hover {
   color: var(--highlight);
+}
+
+.submitButton:hover{
+  background: var(--highlight);
 }
 
 .Logo,
@@ -52,7 +56,10 @@ a:hover{
 .profileIcon,
 .Category,
 .checkbox, 
-.downloadButton {
+.downloadButton, 
+.resetButton,
+.submitButton,
+.catCheck {
   cursor: pointer;
 }
 

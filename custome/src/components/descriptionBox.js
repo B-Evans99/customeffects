@@ -7,6 +7,7 @@ import downloadNoHover from "../images/download.png";
 import downloadHover from "../images/download_hover.png";
 import "../App.css";
 import users from "../data/users.js";
+var fileDownload = require("js-file-download");
 
 const DescriptionBox = props => {
   let setNavigation = props.setNavigation;
@@ -17,6 +18,8 @@ const DescriptionBox = props => {
 
   const downloadClick = () => {
     console.log("download click");
+    // let effectDownload = effect.name + "\n" + effect.desc;
+    // fileDownload(effectDownload, "effectFile.txt");
   };
 
   var download = hoverDownload ? downloadHover : downloadNoHover;
@@ -44,7 +47,7 @@ const DescriptionBox = props => {
               </span>
             </div>
           </div>
-          <Link to={"./data" + effect.script} target="_blank" download>
+          <Link to={"../data/" + effect.script} target="_blank" download>
             <img
               className="downloadButton"
               src={download}

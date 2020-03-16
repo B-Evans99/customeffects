@@ -13,12 +13,14 @@ const UploadForm = props => {
   let [name, setName] = useState("");
   let [desc, setDesc] = useState("");
   let [cats, setCats] = useState([]);
-  let [newEffect, setNewEffect] = useState({name:"", author: "", id: 0, files: [], image: emptyImg, desc: "", cat: [] });
+  let [newEffect, setNewEffect] = useState({name:"", author: "", id: 0, date: new Date().getTime(), files: [], image: emptyImg, desc: "", cat: [] });
   let [clearChecks, setClearChecks] = useState(0);
 
   const clearFields = () =>{
     setName("");
     setFiles([]);
+    setImg([]);
+    setDesc("");
     cats.length = 0;
   }
 
@@ -28,9 +30,16 @@ const UploadForm = props => {
 
   const submitClick = () => {
     console.log(newEffect);
-    let tempEffect = {name: name, author: "", id: 0, files: files[0], image: emptyImg, desc: "", cat: [] };
+    let tempEffect = {name: name, author: "", id: 0, date: new Date().getTime(), files: files[0], image: emptyImg, desc: "", cat: [] };
+    tempEffect.name = name;
+    tempEffect.author = "yours";
+    tempEffect.files = files;
+    tempEffect.image = img;
+    tempEffect.desc = desc;
+    tempEffect.cat = cats;
     setNewEffect(newEffect=> newEffect = tempEffect);
     console.log(newEffect);
+    clearFields();
   }
   
 
